@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { ajaxGet } from '../utils/Ajax';
+import { asset_url } from '../utils/Config';
 
 
 class TV extends React.Component {
@@ -34,7 +35,13 @@ class TV extends React.Component {
     loadTV(tv_id){
         ajaxGet('tvs/' + tv_id + '/').then((res) => {
             if (!this.state.tv.id) {
-                this.setState({tv: res.data});
+                let tv = res.data;
+                console.log(tv)
+                if (tv.link.url && tv.link.url.startsWith("https://assos.utc.fr/picasso/tv")) {
+                    tv.link.url = asset_url(tv.link.url.replace("https://assos.utc.fr/picasso/tv", ""));
+                }
+                console.log(tv)
+                this.setState({tv: tv});
             } else {
                 if (this.state.tv.link.name !== res.data.link.name) {
                     window.location.reload();
