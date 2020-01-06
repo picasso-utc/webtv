@@ -36,14 +36,21 @@ class TV extends React.Component {
         ajaxGet('tvs/' + tv_id + '/').then((res) => {
             if (!this.state.tv.id) {
                 let tv = res.data;
-                console.log(tv)
                 if (tv.link.url && tv.link.url.startsWith("https://assos.utc.fr/picasso/tv")) {
                     tv.link.url = asset_url(tv.link.url.replace("https://assos.utc.fr/picasso/tv", ""));
                 }
-                console.log(tv)
+                
                 this.setState({tv: tv});
+                setTimeout(()=> {
+                    if (window.location.hash !== "#loaded") {
+                        window.location.hash = "loaded";
+                        window.location.reload();
+                    }
+                }, 3000)
+                
             } else {
                 if (this.state.tv.link.name !== res.data.link.name) {
+                    window.location.hash = "";
                     window.location.reload();
                 }
             }
