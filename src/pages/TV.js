@@ -24,7 +24,7 @@ class TV extends React.Component {
             this.loadTV(tv_id);
             setInterval(() => this.loadTV(tv_id), 30000);
             // Toutes les 2 heures refresh de la page
-            setInterval(() => this.reloadTV(), 2 * 60* 60 * 1000);
+            setInterval(() => this.reloadTV(), 2 * 60 * 60 * 1000);
         }
     }
 
@@ -39,18 +39,9 @@ class TV extends React.Component {
                 if (tv.link.url && tv.link.url.startsWith("https://assos.utc.fr/picasso/tv")) {
                     tv.link.url = asset_url(tv.link.url.replace("https://assos.utc.fr/picasso/tv", ""));
                 }
-                
-                this.setState({tv: tv});
-                setTimeout(()=> {
-                    if (window.location.hash !== "#loaded") {
-                        window.location.hash = "loaded";
-                        window.location.reload();
-                    }
-                }, 3000)
-                
+                this.setState({tv: tv});   
             } else {
                 if (this.state.tv.link.name !== res.data.link.name) {
-                    window.location.hash = "";
                     window.location.reload();
                 }
             }
