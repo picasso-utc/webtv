@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 
 class PermFormule1 extends React.Component {
 
-    // Mercedes - Deli => 458
+    // Mercedes - Di => 458
     // Red Bull Racing - Cuvée =>  457
     // Ferrari - Kastell => 14821
     // McLaren - Cidre => 16581
@@ -22,27 +22,27 @@ class PermFormule1 extends React.Component {
         this.state = {
             beers : {
                 mercedes : {
-                    delirium:{
-                        name: 'Mercedes - Delirium',
-                        id: 458,
+                    cuvee:{
+                        name: 'Mercedes - Cuvée',
+                        id: 457,
                         nb: 0,
                         color:'#00D2BE',
                         img:'/images/mercedes.png',
                     }
                 },
                 redBull:{
-                    cuvee:{
-                        name: 'Red Bull - Cuvée',
-                        id: 457,
+                    kastel:{
+                        name: 'Red Bull - Kastell red',
+                        id: 14821,
                         nb: 0,
                         color:'#0600EF',
                         img:'redbull.png',
                     },
                 },
                 ferrari:{
-                    kastell:{
-                        name: 'Ferrari - Kastell red',
-                        id: 14821,
+                    delirium:{
+                        name: 'Ferrari - Derium',
+                        id: 458,
                         nb:0,
                         color:'#DC0000',
                         img:'ferrari.png',
@@ -51,8 +51,9 @@ class PermFormule1 extends React.Component {
                 mclaren:{
                     cidre:{
                         color:'#FF8700',
-                        name: 'McLaren - Cidre brut',
-                        id:16581,
+                        name: 'McLaren - Barbar',
+                        // id:16581,
+                        id:1403,
                         nb:0,
                         img:'mclaren.png',
                     }
@@ -60,8 +61,8 @@ class PermFormule1 extends React.Component {
                 alpine:{
                     queue:{
                         color:'#0090FF',
-                        name: 'Alpine - Queue de charue',
-                        id: 16650,
+                        name: 'Alpine - Cidre brut',
+                        id: 16581,
                         nb:0,
                         img:'alpine.png',
                     }
@@ -87,8 +88,8 @@ class PermFormule1 extends React.Component {
                 williams:{
                     harmony:{
                         color:'#005AFF',
-                        name: 'Williams - Harmony',
-                        id:16715,
+                        name: 'Williams - Queue de charue',
+                        id:16650,
                         nb:0,
                         img:'williams.png',
                     }
@@ -96,17 +97,17 @@ class PermFormule1 extends React.Component {
                 alphaRomeo:{
                     chimayRed:{
                         color:'#900000',
-                        name:'Alfa Roméo - Chimay Red',
-                        id:16870,
+                        name:'Alfa Roméo - Harmony',
+                        id:16715,
                         nb:0,
                         img:'alfaromeo.png',
                     }
                 },
                 haas:{
-                    limonade:{
+                    chimayRed:{
                         color:'#FFFFFF',
-                        name:'Haas - BarBar',
-                        id: 1403,
+                        name:'Haas - Chimay Red',
+                        id: 16870,
                         nb: 0,
                         img:'haas.png',
                     }
