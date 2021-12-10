@@ -25,70 +25,90 @@ class PermFormule1 extends React.Component {
                     delirium:{
                         name: 'Mercedes - Delirium',
                         id: 458,
-                        nb: 0
+                        nb: 0,
+                        color:'#FF0000',
+                        img:'',
                     }
                 },
                 redBull:{
                     cuvee:{
                         name: 'Red Bull - Cuvée',
                         id: 457,
-                        nb: 0
+                        nb: 0,
+                        color:'#FF0000',
+                        img:'',
                     },
                 },
                 ferrari:{
                     kastell:{
                         name: 'Ferrari - Kastell red',
                         id: 14821,
-                        nb:0
+                        nb:0,
+                        color:'#FF0000',
+                        img:'',
                     }
                 },
                 mclaren:{
                     cidre:{
+                        color:'#FF0000',
                         name: 'McLaren - Cidre brut',
                         id:16581,
                         nb:0,
+                        img:'',
                     }
                 },
                 alpine:{
                     queue:{
+                        color:'#FF0000',
                         name: 'Alpine - Queue de charue',
                         id: 16650,
                         nb:0,
+                        img:'',
                     }
                 },
                 alphaTauri:{
                     valDieu:{
+                        color:'#FF0000',
                         name:'Alpha Tauri - Val Dieu',
                         id:12492,
                         nb:0,
+                        img:'',
                     }
                 },
                 astonMartin:{
                     castor:{
+                        color:'#FF0000',
                         name:'Aston Martin - Castor IPA',
                         id:16755,
                         nb:0,
+                        img:'',
                     }
                 },
                 williams:{
                     harmony:{
+                        color:'#FF0000',
                         name: 'Williams - Harmony',
                         id:16715,
                         nb:0,
+                        img:'',
                     }
                 },
                 alphaRomeo:{
                     chimayRed:{
+                        color:'#FF0000',
                         name:'Alpha Roméo - Chimay Red',
                         id:16870,
                         nb:0,
+                        img:'',
                     }
                 },
                 haas:{
                     limonade:{
+                        color:'#FF0000',
                         name:'Haas - BarBar',
                         id: 1403,
                         nb: 0,
+                        img:'',
                     }
                 }
 
@@ -138,21 +158,40 @@ class PermFormule1 extends React.Component {
 
         console.log(test)
         const backgroundImage = {
-            backgroundImage: 'url(\'' + asset_url('/images/f1_background.jpeg') + '\')',
+            backgroundImage: 'url(\'' + asset_url('/images/f1_background.jpg') + '\')',
         }
         return (
-            <div className={classes.main} style={backgroundImage}>
-                <h1 className={classes.title}>Perm F1</h1>
+            <Grid container alignItems="center" justifyContent="center" className={classes.main} style={backgroundImage}>
                 {
-                    <Grid container direction={"column"} style={{height: '90%'}}>
-                        {
-                            test.map((value => {
-                                return(<p className={classes.box}>{value.name} - {value.nb} pts</p>)
-                            }))
-                        }
+                    <Grid container alignItems="center" justifyContent="center"  className={classes.mainContainer}>
+                        <Grid item container direction={"column"}>
+                            <h1 className={classes.title}>FORMULA 1</h1>
+                            <h2 className={classes.title}>PIC GRAND PRIX</h2>
+                        </Grid>
+                        <Grid item container direction={"row"} className={classes.containerTeam}>
+                            <Grid item direction={"column"} className={classes.containerLeader}>
+                                <h1 className={classes.title}>LEADERS</h1>
+                                <p className={classes.title}>Image constructor : {test[0].name}</p>
+                            </Grid>
+                            <Grid  item  direction={"column"}>
+                                <h1 className={classes.title}>CONSTRUCTOR CHAMPIONSHIP</h1>
+                                {
+                                    test.map((value => {
+                                        return(
+                                            <Grid direction={"row"} container justify={"space-between"}>
+                                                <div item className={classes.ecurieSquare} style={{backgroundColor:'#FF0000'}}></div>
+                                                <p item className={classes.nameEcurie}>{value.name}</p>
+                                                <p item className={classes.nameEcurie}>{value.nb} pts</p>
+                                            </Grid>
+                                            )
+                                    }))
+                                }
+                            </Grid>
+                        </Grid>
                     </Grid>
+
                 }
-            </div>
+            </Grid>
         );
     }
 }
@@ -162,15 +201,41 @@ const styles = theme => ({
         height: '100vh',
     },
     title : {
-        textAlign: 'center',
-        color : 'red',
-        fontWeight: 600,
-        fontsize : 20
+        color:'#FFFFFF',
+        marginTop: '0px',
     },
-    box : {
-        backgroundColor : '#413F3E',
-        color : 'white'
-    }
+    nameEcurie : {
+        color : 'white',
+        marginTop: '0px',
+    },
+    containerLeader:{
+        marginRight:'35px'
+    },
+    ecurieSquare:{
+      width: '5px',
+      height: '20px'
+    },
+    mainContainer:{
+        borderTopWidth:'2px',
+        borderTopStyle:'solid',
+        borderTopColor: '#FFFFFF',
+        borderLeftWidth:'2px',
+        borderLeftStyle:'solid',
+        borderLeftColor: '#FFFFFF',
+        borderTopLeftRadius:'25px',
+        padding:'25px',
+        borderBottomRightRadius:'25px',
+        backgroundColor: "rgba(0, 0, 0, 0.9)",
+        width:'60%',
+        margin:'auto',
+    },
+    containerTeam:{
+        borderTopWidth:'2px',
+        borderTopStyle:'solid',
+        borderTopColor: '#FF0000',
+        verticalAlign:"middle",
+    },
+
 });
 
 export default withStyles (styles) (PermFormule1)
