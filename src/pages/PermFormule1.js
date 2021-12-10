@@ -138,16 +138,16 @@ class PermFormule1 extends React.Component {
 
         console.log(test)
         const backgroundImage = {
-            backgroundImage: 'url(\'' + asset_url('/images/f1.png') + '\')'
+            backgroundImage: 'url(\'' + asset_url('/images/f1_background.jpeg') + '\')',
         }
         return (
-            <div className={classes.background}>
+            <div className={classes.main} style={backgroundImage}>
                 <h1 className={classes.title}>Perm F1</h1>
                 {
                     <Grid container direction={"column"} style={{height: '90%'}}>
                         {
                             test.map((value => {
-                                return(<p>{value.name} - {value.nb} pts</p>)
+                                return(<p className={classes.box}>{value.name} - {value.nb} pts</p>)
                             }))
                         }
                     </Grid>
@@ -158,18 +158,19 @@ class PermFormule1 extends React.Component {
 }
 
 const styles = theme => ({
+    main: {
+        height: '100vh',
+    },
     title : {
         textAlign: 'center',
         color : 'red',
         fontWeight: 600,
         fontsize : 20
     },
-
-    background : {
+    box : {
         backgroundColor : '#413F3E',
+        color : 'white'
     }
-
-
 });
 
 export default withStyles (styles) (PermFormule1)
