@@ -189,12 +189,11 @@ class PermFormule1 extends React.Component {
                                             height: '20px',
                                             backgroundColor : value.color
                                         }
-                                        console.log(value)
                                         return(
-                                            <Grid direction={"row"} container justify={"space-between"}>
+                                            <Grid className={classes.ecurieContainer} direction={"row"} container justify={"space-between"}>
                                                 <p item className={classes.rank}> {index+1}</p>
                                                 <div item style={style}></div>
-                                                <Grid item justify={"flex-start"}>
+                                                <Grid item justify={"flex-start"} className={classes.ecurieNameContainer}>
                                                     <p item className={classes.nameEcurie}>{value.name}</p>
                                                 </Grid>
                                                 <p item className={classes.nameEcurie}>{value.nb} pts</p>
@@ -222,11 +221,15 @@ const styles = theme => ({
         marginTop: '0px',
     },
     nameEcurie : {
+        fontSize: '20px',
         color : 'white',
-        marginTop: '0px',
+        margin: '0px',
     },
     containerLeader:{
         marginRight:'35px'
+    },
+    ecurieContainer:{
+        marginBottom:'10px',
     },
     mainContainer:{
         borderTopWidth:'2px',
@@ -243,6 +246,8 @@ const styles = theme => ({
         margin:'auto',
     },
     rank:{
+        fontSize: '20px',
+        margin:'0px',
         color : 'black',
         backgroundColor: 'white',
         width: '20px',
@@ -258,6 +263,9 @@ const styles = theme => ({
     leaderLogo:{
         fit : 'contain',
     },
+    ecurieNameContainer:{
+        width:'70%',
+    }
 
 });
 
