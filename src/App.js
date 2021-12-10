@@ -10,6 +10,7 @@ import TVMenu from './pages/TVMenu';
 import TVDuelBrasseur from './pages/TVDuelBrasseur';
 import TVDuelBrasseur2 from './pages/TVDuelBrasseur2';
 import PermPic from './pages/PermPic';
+import PermFormule1 from "./pages/PermFormule1";
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -27,6 +28,7 @@ class App extends React.Component {
 					<Route path="/duelbrasseur" exact component={TVDuelBrasseur}/>
 					<Route path="/pic" exact component={PermPic}/>
 					<Route path="/duelbrasseur2" exact component={TVDuelBrasseur2}/>
+					<Route path="/permf1" exact component={PermFormule1}/>
 				</Switch>
 			</BrowserRouter>
 		)
