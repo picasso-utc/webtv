@@ -36,7 +36,7 @@ class PermFormule1 extends React.Component {
                         id: 14821,
                         nb: 0,
                         color:'#0600EF',
-                        img:'redbull.png',
+                        img:'/images/redbull.png',
                     },
                 },
                 ferrari:{
@@ -45,7 +45,7 @@ class PermFormule1 extends React.Component {
                         id: 458,
                         nb:0,
                         color:'#DC0000',
-                        img:'ferrari.png',
+                        img:'/images/ferrari.png',
                     }
                 },
                 mclaren:{
@@ -54,7 +54,7 @@ class PermFormule1 extends React.Component {
                         name: 'McLaren - Barbar',
                         id:1403,
                         nb:0,
-                        img:'mclaren.png',
+                        img:'/images/mclaren.png',
                     }
                 },
                 alpine:{
@@ -63,7 +63,7 @@ class PermFormule1 extends React.Component {
                         name: 'Alpine - Cidre brut',
                         id: 16581,
                         nb:0,
-                        img:'alpine.png',
+                        img:'/images/alpine.png',
                     }
                 },
                 alphaTauri:{
@@ -72,7 +72,7 @@ class PermFormule1 extends React.Component {
                         name:'Alpha Tauri - Val Dieu',
                         id:12492,
                         nb:0,
-                        img:'alphatauri.png',
+                        img:'/images/alphatauri.png',
                     }
                 },
                 astonMartin:{
@@ -81,7 +81,7 @@ class PermFormule1 extends React.Component {
                         name:'Aston Martin - Castor IPA',
                         id:16755,
                         nb:0,
-                        img:'aston.png',
+                        img:'/images/aston.png',
                     }
                 },
                 williams:{
@@ -90,7 +90,7 @@ class PermFormule1 extends React.Component {
                         name: 'Williams - Queue de charue',
                         id:16650,
                         nb:0,
-                        img:'williams.png',
+                        img:'/images/williams.png',
                     }
                 },
                 alphaRomeo:{
@@ -99,7 +99,7 @@ class PermFormule1 extends React.Component {
                         name:'Alfa Roméo - Harmony',
                         id:16715,
                         nb:0,
-                        img:'alfaromeo.png',
+                        img:'/images/alfaromeo.png',
                     }
                 },
                 haas:{
@@ -108,7 +108,7 @@ class PermFormule1 extends React.Component {
                         name:'Haas - Chimay Red',
                         id: 16870,
                         nb: 0,
-                        img:'haas.png',
+                        img:'/images/haas.png',
                     }
                 }
 
