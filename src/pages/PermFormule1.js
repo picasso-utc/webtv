@@ -32,7 +32,7 @@ class PermFormule1 extends React.Component {
                 },
                 redBull:{
                     kastel:{
-                        name: 'Red Bull - Kastell red',
+                        name: 'Red Bull - Kasteel red',
                         id: 14821,
                         nb: 0,
                         color:'#0600EF',
@@ -41,7 +41,7 @@ class PermFormule1 extends React.Component {
                 },
                 ferrari:{
                     delirium:{
-                        name: 'Ferrari - Derium',
+                        name: 'Ferrari - Delirium',
                         id: 458,
                         nb:0,
                         color:'#DC0000',
@@ -52,7 +52,6 @@ class PermFormule1 extends React.Component {
                     cidre:{
                         color:'#FF8700',
                         name: 'McLaren - Barbar',
-                        // id:16581,
                         id:1403,
                         nb:0,
                         img:'mclaren.png',
@@ -173,8 +172,8 @@ class PermFormule1 extends React.Component {
                 {
                     <Grid container alignItems="center" justifyContent="center"  className={classes.mainContainer}>
                         <Grid item container direction={"column"}>
-                            <h1 className={classes.title}>FORMULA 1</h1>
-                            <h2 className={classes.title}>PIC GRAND PRIX</h2>
+                            <h1 className={classes.titleBig}>FORMULA 1</h1>
+                            <h2 className={classes.titleMedium}>PIC GRAND PRIX</h2>
                         </Grid>
                         <Grid item container direction={"row"} className={classes.containerTeam}>
                             <Grid item direction={"column"} className={classes.containerLeader}>
@@ -187,7 +186,7 @@ class PermFormule1 extends React.Component {
                                     test.map(((value,index) => {
                                         const style = {
                                             width: '5px',
-                                            height: '20px',
+                                            height: '25px',
                                             backgroundColor : value.color
                                         }
                                         return(
@@ -217,12 +216,23 @@ const styles = theme => ({
         backgroundColor: "#000000",
         height: '100vh',
     },
+    titleBig:{
+        fontSize: '30px',
+        color:'#FFFFFF',
+        marginTop: '0px',
+    },
+    titleMedium:{
+        fontSize: '30px',
+        color:'#FFFFFF',
+        marginTop: '0px',
+    },
     title : {
+        fontSize: '25px',
         color:'#FFFFFF',
         marginTop: '0px',
     },
     nameEcurie : {
-        fontSize: '20px',
+        fontSize: '24px',
         color : 'white',
         margin: '0px',
     },
@@ -247,12 +257,12 @@ const styles = theme => ({
         margin:'auto',
     },
     rank:{
-        fontSize: '20px',
+        fontSize: '24px',
         margin:'0px',
         color : 'black',
         backgroundColor: 'white',
         width: '20px',
-        height : '20px',
+        height : '28px',
         textAlign : 'center'
     },
     containerTeam:{
