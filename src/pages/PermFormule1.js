@@ -121,6 +121,9 @@ class PermFormule1 extends React.Component {
     render() {
         const { classes } = this.props;
         const { beers } = this.state;
+        const backgroundImage = {
+            backgroundImage: 'url(\'' + asset_url('/images/background_logo.png') + '\')'
+        }
 
         const keysBeer = Object.keys(beers).sort(function(a,b){
             let aKeys = Object.keys(beers[a])
@@ -151,6 +154,7 @@ class PermFormule1 extends React.Component {
 }
 
 const styles = theme => ({
+
 
 });
 
