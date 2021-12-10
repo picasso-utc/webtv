@@ -152,7 +152,12 @@ class PermFormule1 extends React.Component {
 
         keysBeer.map((value) =>{
             Object.keys(beers[value]).map((ecurie) =>{
-                test.push({name:beers[value][ecurie].name, nb:beers[value][ecurie].nb})
+                test.push({
+                    name:beers[value][ecurie].name,
+                    nb:beers[value][ecurie].nb,
+                    color:beers[value][ecurie].color,
+                    img:beers[value][ecurie].img,
+                })
             })
         })
 
@@ -162,6 +167,7 @@ class PermFormule1 extends React.Component {
         }
 
         return (
+            // <Grid container alignItems="center" justifyContent="center" className={classes.main} style={backgroundImage}>
             <Grid container alignItems="center" justifyContent="center" className={classes.main} style={backgroundImage}>
                 {
                     <Grid container alignItems="center" justifyContent="center"  className={classes.mainContainer}>
@@ -178,12 +184,19 @@ class PermFormule1 extends React.Component {
                                 <h1 className={classes.title}>CONSTRUCTOR CHAMPIONSHIP</h1>
                                 {
                                     test.map(((value,index) => {
-                                        const style_square = {backgroundColor : value.color}
+                                        const style = {
+                                            width: '5px',
+                                            height: '20px',
+                                            backgroundColor : value.color
+                                        }
+                                        console.log(value)
                                         return(
                                             <Grid direction={"row"} container justify={"space-between"}>
-                                                <div item className={classes.ecurieSquare} style={style_square}></div>
                                                 <p item className={classes.rank}> {index+1}</p>
-                                                <p item className={classes.nameEcurie}>{value.name}</p>
+                                                <div item style={style}></div>
+                                                <Grid item justify={"flex-start"}>
+                                                    <p item className={classes.nameEcurie}>{value.name}</p>
+                                                </Grid>
                                                 <p item className={classes.nameEcurie}>{value.nb} pts</p>
                                             </Grid>
                                             )
@@ -201,6 +214,7 @@ class PermFormule1 extends React.Component {
 
 const styles = theme => ({
     main: {
+        backgroundColor: "#000000",
         height: '100vh',
     },
     title : {
@@ -213,10 +227,6 @@ const styles = theme => ({
     },
     containerLeader:{
         marginRight:'35px'
-    },
-    ecurieSquare:{
-      width: '5px',
-      height: '20px'
     },
     mainContainer:{
         borderTopWidth:'2px',
