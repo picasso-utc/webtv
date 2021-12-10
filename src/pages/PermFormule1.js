@@ -121,9 +121,6 @@ class PermFormule1 extends React.Component {
     render() {
         const { classes } = this.props;
         const { beers } = this.state;
-        const backgroundImage = {
-            backgroundImage: 'url(\'' + asset_url('/images/background_logo.png') + '\')'
-        }
 
         const keysBeer = Object.keys(beers).sort(function(a,b){
             let aKeys = Object.keys(beers[a])
@@ -140,13 +137,20 @@ class PermFormule1 extends React.Component {
         })
 
         console.log(test)
+        const backgroundImage = {
+            backgroundImage: 'url(\'' + asset_url('/images/f1.png') + '\')'
+        }
         return (
-
-            <div>
+            <div className={classes.background}>
+                <h1 className={classes.title}>Perm F1</h1>
                 {
-                    test.map((value => {
-                        return(<p>{value.name} - {value.nb} pts</p>)
-                    }))
+                    <Grid container direction={"column"} style={{height: '90%'}}>
+                        {
+                            test.map((value => {
+                                return(<p>{value.name} - {value.nb} pts</p>)
+                            }))
+                        }
+                    </Grid>
                 }
             </div>
         );
@@ -154,6 +158,16 @@ class PermFormule1 extends React.Component {
 }
 
 const styles = theme => ({
+    title : {
+        textAlign: 'center',
+        color : 'red',
+        fontWeight: 600,
+        fontsize : 20
+    },
+
+    background : {
+        backgroundColor : '#413F3E',
+    }
 
 
 });
