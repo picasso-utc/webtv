@@ -54,7 +54,7 @@ class PermFormule1 extends React.Component {
                         name: 'McLaren - Barbar',
                         id:1403,
                         nb:0,
-                        img:'/images/mclaren.png',
+                        img:'/images/maclaren.png',
                     }
                 },
                 alpine:{
@@ -272,6 +272,8 @@ const styles = theme => ({
         verticalAlign:"middle",
     },
     leaderLogo:{
+        width:'300px',
+        height:'295px',
         fit : 'contain',
     },
     ecurieNameContainer:{
