@@ -26,8 +26,8 @@ class PermFormule1 extends React.Component {
                         name: 'Mercedes - Delirium',
                         id: 458,
                         nb: 0,
-                        color:'#FF0000',
-                        img:'',
+                        color:'#00D2BE',
+                        img:'/images/mercedes.png',
                     }
                 },
                 redBull:{
@@ -35,8 +35,8 @@ class PermFormule1 extends React.Component {
                         name: 'Red Bull - Cuvée',
                         id: 457,
                         nb: 0,
-                        color:'#FF0000',
-                        img:'',
+                        color:'#0600EF',
+                        img:'redbull.png',
                     },
                 },
                 ferrari:{
@@ -44,71 +44,71 @@ class PermFormule1 extends React.Component {
                         name: 'Ferrari - Kastell red',
                         id: 14821,
                         nb:0,
-                        color:'#FF0000',
-                        img:'',
+                        color:'#DC0000',
+                        img:'ferrari.png',
                     }
                 },
                 mclaren:{
                     cidre:{
-                        color:'#FF0000',
+                        color:'#FF8700',
                         name: 'McLaren - Cidre brut',
                         id:16581,
                         nb:0,
-                        img:'',
+                        img:'mclaren.png',
                     }
                 },
                 alpine:{
                     queue:{
-                        color:'#FF0000',
+                        color:'#0090FF',
                         name: 'Alpine - Queue de charue',
                         id: 16650,
                         nb:0,
-                        img:'',
+                        img:'alpine.png',
                     }
                 },
                 alphaTauri:{
                     valDieu:{
-                        color:'#FF0000',
+                        color:'#2B4562',
                         name:'Alpha Tauri - Val Dieu',
                         id:12492,
                         nb:0,
-                        img:'',
+                        img:'alphatauri.png',
                     }
                 },
                 astonMartin:{
                     castor:{
-                        color:'#FF0000',
+                        color:'#006F62',
                         name:'Aston Martin - Castor IPA',
                         id:16755,
                         nb:0,
-                        img:'',
+                        img:'aston.png',
                     }
                 },
                 williams:{
                     harmony:{
-                        color:'#FF0000',
+                        color:'#005AFF',
                         name: 'Williams - Harmony',
                         id:16715,
                         nb:0,
-                        img:'',
+                        img:'williams.png',
                     }
                 },
                 alphaRomeo:{
                     chimayRed:{
-                        color:'#FF0000',
-                        name:'Alpha Roméo - Chimay Red',
+                        color:'#900000',
+                        name:'Alfa Roméo - Chimay Red',
                         id:16870,
                         nb:0,
-                        img:'',
+                        img:'alfaromeo.png',
                     }
                 },
                 haas:{
                     limonade:{
-                        color:'#FF0000',
+                        color:'#FFFFFF',
                         name:'Haas - BarBar',
                         id: 1403,
                         nb: 0,
-                        img:'',
+                        img:'haas.png',
                     }
                 }
 
@@ -160,6 +160,12 @@ class PermFormule1 extends React.Component {
         const backgroundImage = {
             backgroundImage: 'url(\'' + asset_url('/images/f1_background.jpg') + '\')',
         }
+        const leaderLogo = {
+            backgroundImage : 'url(\'' + asset_url('/images/f1_background.jpg') + '\')',
+        }
+
+        const leaderPath = test[0].img
+
         return (
             <Grid container alignItems="center" justifyContent="center" className={classes.main} style={backgroundImage}>
                 {
@@ -172,14 +178,17 @@ class PermFormule1 extends React.Component {
                             <Grid item direction={"column"} className={classes.containerLeader}>
                                 <h1 className={classes.title}>LEADERS</h1>
                                 <p className={classes.title}>Image constructor : {test[0].name}</p>
+                                <img item src={} className={classes.leaderLogo}/>
                             </Grid>
                             <Grid  item  direction={"column"}>
                                 <h1 className={classes.title}>CONSTRUCTOR CHAMPIONSHIP</h1>
                                 {
-                                    test.map((value => {
+                                    test.map(((value,index) => {
+                                        const style_square = {backgroundColor : value.color}
                                         return(
                                             <Grid direction={"row"} container justify={"space-between"}>
-                                                <div item className={classes.ecurieSquare} style={{backgroundColor:'#FF0000'}}></div>
+                                                <div item className={classes.ecurieSquare} style={style_square}></div>
+                                                <p item className={classes.rank}> {index+1}</p>
                                                 <p item className={classes.nameEcurie}>{value.name}</p>
                                                 <p item className={classes.nameEcurie}>{value.nb} pts</p>
                                             </Grid>
@@ -229,11 +238,21 @@ const styles = theme => ({
         width:'60%',
         margin:'auto',
     },
+    rank:{
+        color : 'black',
+        backgroundColor: 'white',
+        width: '20px',
+        height : '20px',
+        textAlign : 'center'
+    },
     containerTeam:{
         borderTopWidth:'2px',
         borderTopStyle:'solid',
         borderTopColor: '#FF0000',
         verticalAlign:"middle",
+    },
+    leaderLogo:{
+        fit : 'contain',
     },
 
 });
