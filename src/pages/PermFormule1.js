@@ -160,11 +160,6 @@ class PermFormule1 extends React.Component {
         const backgroundImage = {
             backgroundImage: 'url(\'' + asset_url('/images/f1_background.jpg') + '\')',
         }
-        const leaderLogo = {
-            backgroundImage : 'url(\'' + asset_url('/images/f1_background.jpg') + '\')',
-        }
-
-        const leaderPath = test[0].img
 
         return (
             <Grid container alignItems="center" justifyContent="center" className={classes.main} style={backgroundImage}>
@@ -177,8 +172,7 @@ class PermFormule1 extends React.Component {
                         <Grid item container direction={"row"} className={classes.containerTeam}>
                             <Grid item direction={"column"} className={classes.containerLeader}>
                                 <h1 className={classes.title}>LEADERS</h1>
-                                <p className={classes.title}>Image constructor : {test[0].name}</p>
-                                <img item src={} className={classes.leaderLogo}/>
+                                <img item src={asset_url(test[0].img)} className={classes.leaderLogo}/>
                             </Grid>
                             <Grid  item  direction={"column"}>
                                 <h1 className={classes.title}>CONSTRUCTOR CHAMPIONSHIP</h1>
