@@ -87,8 +87,8 @@ class PermFormule1 extends React.Component {
                 williams:{
                     harmony:{
                         color:'#005AFF',
-                        name: 'Williams - Queue de charue',
-                        id:16650,
+                        name: 'Williams - Chimay Bleue',
+                        id:1399,
                         nb:0,
                         img:'/images/williams.png',
                     }
