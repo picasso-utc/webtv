@@ -1,0 +1,13 @@
+.mainContainer {
+    background-image: url('../assets/backgroundPermChef.jpg');
+}
+
+.blurEffect {
+    align-items: flex-end;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(5px); /* assure la compatibilité avec safari */
+    backdrop-filter: blur(5px);
+    background-color: rgba(182, 182, 182, 0.2);
+}
