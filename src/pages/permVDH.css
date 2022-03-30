@@ -12,11 +12,11 @@
 }
 
 .vdhText {
-    font-size: 40px;
+    font-size: 4rem;
     color: white;
     text-align: center;
     margin: auto;
-    width: 400px;
+    width: 60%;
 }
 
 .montant {
