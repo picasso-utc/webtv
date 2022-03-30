@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ajaxPost } from '../utils/Ajax'
 import Grid from "@material-ui/core/Grid";
-import DonsBar from '../components/permVDH/DonsBar'
+import DonsBar from '../components/permVDH/DonsBar.js'
 import './permVDH.css'
 
 
