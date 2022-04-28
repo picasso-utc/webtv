@@ -13,6 +13,7 @@ import PermPic from './pages/PermPic';
 import PermFormule1 from "./pages/PermFormule1";
 import PermChef from './pages/PermChef'
 import PermVDH from './pages/PermVDH'
+import PermR4 from './pages/permR4'
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -33,6 +34,7 @@ class App extends React.Component {
 					<Route path="/permf1" exact component={PermFormule1}/>
 					<Route path="/permchef" exact component={PermChef}/>
 					<Route path="/permvdh" exact component={PermVDH}/>
+					<Route path="/permR4" exact component={PermR4}/>
 				</Switch>
 			</BrowserRouter>
 		)
