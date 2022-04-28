@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "LemonMilk";
+  src: url("../assets/permR4/LemonMilk.otf");
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 100%;
+  font-family: LemonMilk;
+  background-image: url("../assets/permR4/fond.png");
+  background-size: cover;
+  color : white;
+}
+
+hr{
+  margin-left: 0;
+  margin-right: 0;
+  width: var(--gap);
+  border-color : white;
+  background-color: white;
+}
+
+.evol{
+  display: flex;
+  flex-direction: row;
+  gap : 0;
+}
+
+
+
+.ligne_depart{
+  height: 7%;
+  width: 7%;
+  filter: brightness(0) invert(1);
+}
+
+.velo{
+  height: 7%;
+  width: 7%;
+  color : white;
+  margin-left: 0;
+  filter: brightness(0) invert(1);
+}
+
+.graduation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: inherit;
+}
+
+.container-evol{
+  margin : 1%;
+  width : 88%
+}
+
+.arrivee{
+  height: 6%;
+  width: 6%;
+  filter: brightness(0) invert(1);
+}
+
+.container-jauge{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1%;
+}
+
+.Affichage_don{
+  text-align: center;
+}
+
+.Affichage_don h1{
+  border: solid 10px;
+  border-radius: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: 100px;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.Logos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin : 8px;
+}
+
+.Logos h1{
+  font-size: 60px;
+}
+
+.R4M{
+  height: 10%;
+  width: 10%;
+  filter: brightness(0) invert(1);
+}
+
+.Raidut{
+  height: 10%;
+  width: 10%;
+  filter: brightness(0) invert(1);
+  opacity : 1;
+  margin-top: 0;
+}
+
+.CDF{
+  height: 14%;
+  width: 14%;
+  margin-top: 2%;
+}
