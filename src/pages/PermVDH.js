@@ -39,7 +39,7 @@ const PermVDH = () => {
     }, [])
 
     return (
-        <Grid class="mainContainer">
+        <Grid class="mainContainerVDH">
             <div className='blurEffect'>
                 <div class="vdhText">
                     <p><strong>PERM VDH</strong></p>
