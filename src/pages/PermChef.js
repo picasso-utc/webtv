@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { ajaxPost } from '../utils/Ajax'
 import Grid from '@material-ui/core/Grid'
 import ClanBar from '../components/permChef/ClanBar'
-import logoDuri from '../assets/logoDuri.jpg'
-import logoDagul from '../assets/logoDagul.jpg'
 import logoKB from '../assets/logoKB.png'
 import logoVB from '../assets/logoVB.png'
 import logoYoua from '../assets/logoYoua.png'
@@ -22,38 +20,34 @@ const PermChef = () => {
     // Barbar => 1403
     const [beers, setBeers] = useState({
         tampi: {
-            kastel: {
-                id: 14821,
-                quantity: 0
-            }
-        },
-        kb: {
-            cuvee: {
-                id: 457,
-                quantity: 0
-            }
-        },
-        youa: {
-            cidre: {
-                id: 16581,
-                quantity: 0
-            }
-        },
-        vb: {
             barbar: {
                 id: 1403,
                 quantity: 0
             }
         },
-        dagul: {
-            delirium: {
+        kb: {
+            deli: {
                 id: 458,
+                quantity: 0
+            },
+            rebelle: {
+                id: 17554,
                 quantity: 0
             }
         },
-        duri: {
-            valDieu: {
+        youa: {
+            wildebeest: {
+                id: 17545,
+                quantity: 0
+            },
+            valdieu: {
                 id: 12492,
+                quantity: 0
+            }
+        },
+        vb: {
+            cidre: {
+                id: 17310,
                 quantity: 0
             }
         }
@@ -70,12 +64,10 @@ const PermChef = () => {
 
     useEffect(() => {
         setMaxPoints(Math.max(
-            beers.dagul.delirium.quantity,
-            beers.kb.cuvee.quantity,
-            beers.vb.barbar.quantity,
-            beers.tampi.kastel.quantity,
-            beers.youa.cidre.quantity,
-            beers.duri.valDieu.quantity,
+            beers.kb.rebelle.quantity + beers.kb.deli.quantity,
+            beers.vb.cidre.quantity,
+            beers.tampi.barbar.quantity,
+            beers.youa.wildebeest.quantity + beers.youa.valdieu.quantity,
             1
         ))
     }, [beers])
@@ -90,12 +82,10 @@ const PermChef = () => {
     return (
         <Grid class="mainContainer">
             <div className='blurEffect'>
-                <ClanBar logo={logoDagul} color="#000000"  points={beers.dagul.delirium.quantity * 1000} maxPoints={maxPoints * 1000} />
-                <ClanBar logo={logoKB} color="#ff0000" points={beers.kb.cuvee.quantity * 1000} maxPoints={maxPoints * 1000} />
-                <ClanBar logo={logoVB} color="#00ff00" points={beers.vb.barbar.quantity * 1000} maxPoints={maxPoints * 1000} />
-                <ClanBar logo={logoTampi} color="#ffff00" points={beers.tampi.kastel.quantity * 1000} maxPoints={maxPoints * 1000} />
-                <ClanBar logo={logoYoua} color="#0000ff" points={beers.youa.cidre.quantity * 1000} maxPoints={maxPoints * 1000} />
-                <ClanBar logo={logoDuri} color="#ffffff" points={beers.duri.valDieu.quantity * 1000} maxPoints={maxPoints * 1000} />
+                <ClanBar logo={logoKB} color="#ff0000" points={(beers.kb.rebelle.quantity + beers.kb.deli.quantity) * 1000} maxPoints={maxPoints * 1000} />
+                <ClanBar logo={logoVB} color="#00ff00" points={(beers.vb.cidre.quantity) * 1000} maxPoints={maxPoints * 1000} />
+                <ClanBar logo={logoTampi} color="#ffff00" points={(beers.tampi.barbar.quantity) * 1000} maxPoints={maxPoints * 1000} />
+                <ClanBar logo={logoYoua} color="#0000ff" points={(beers.youa.wildebeest.quantity + beers.youa.valdieu.quantity) * 1000} maxPoints={maxPoints * 1000} />
             </div>
         </Grid>
     )

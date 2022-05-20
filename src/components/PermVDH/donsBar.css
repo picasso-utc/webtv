@@ -1,6 +1,5 @@
 .barContainer {
     display: flex;
     flex-direction: column;
-    margin-right: 15%;
     padding-bottom: 50px;
 }

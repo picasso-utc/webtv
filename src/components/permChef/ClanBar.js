@@ -5,7 +5,7 @@ const ClanBar = ({ logo, color, points, maxPoints }) => {
     console.log(points, maxPoints)
     const height = 10 + (points / maxPoints) * 70
     return (
-        <div className='barContainer'>
+        <div className='barContainer clan'>
             <div style={{
                 width: '100px',
                 height: String(height)+'vh',
