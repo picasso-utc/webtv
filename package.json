@@ -19,7 +19,7 @@
     "react-dom": "^16.8.6",
     "react-popupbox": "^2.0.8",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.4.4",
     "reactstrap": "^7.1.0",
     "typescript": "^3.4.5"
   },
