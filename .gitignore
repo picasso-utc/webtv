@@ -1,3 +1,13 @@
+#
+
 node_modules/
 build/
+
+# Config
+
 /src/utils/Config.js
+
+# Misc
+
+.idea
+.DS_Store

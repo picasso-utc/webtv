@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react"
-import Velo from '../assets/permR4/velo.png'
-import Ligne_de_depart from '../assets/permR4/ligne-de-depart.png'
-import Arrivee from '../assets/permR4/arrivee.png'
-import R4M from '../assets/permR4/Logo_R4M_contract.png'
-import CDF from '../assets/permR4/CDF.jpg'
-import Raidut from '../assets/permR4/Logo_RaidUT_vert.png'
+import Velo from '../../assets/permR4/velo.png'
+import Ligne_de_depart from '../../assets/permR4/ligne-de-depart.png'
+import Arrivee from '../../assets/permR4/arrivee.png'
+import R4M from '../../assets/permR4/Logo_R4M_contract.png'
+import CDF from '../../assets/permR4/CDF.jpg'
+import Raidut from '../../assets/permR4/Logo_RaidUT_vert.png'
 import './permR4.css'
-import {ajaxPost} from "../utils/Ajax";
+import {ajaxPost} from "../../utils/Ajax";
 
 const PermR4 = () => {
 

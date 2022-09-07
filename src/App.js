@@ -4,16 +4,16 @@ import { CssBaseline } from '@material-ui/core';
 
 import './App.css';
 
-import TV from './pages/TV';
-import TVContent from './pages/TVContent';
-import TVMenu from './pages/TVMenu';
-import TVDuelBrasseur from './pages/TVDuelBrasseur';
-import TVDuelBrasseur2 from './pages/TVDuelBrasseur2';
-import PermPic from './pages/PermPic';
-import PermFormule1 from "./pages/PermFormule1";
-import PermChef from './pages/PermChef'
-import PermVDH from './pages/PermVDH'
-import PermR4 from './pages/permR4'
+import TV from './pages/tv/TV';
+import TVContent from './pages/tvContent/TVContent';
+import TVMenu from './pages/tvMenu/TVMenu';
+import TVDuelBrasseur from './pages/duelBrasseur/TVDuelBrasseur';
+import TVDuelBrasseur2 from './pages/duelBrasseur/TVDuelBrasseur2';
+import PermPic from './pages/permPic/PermPic';
+import PermFormule1 from "./pages/permF1/PermFormule1";
+import PermChef from './pages/permChef/PermChef'
+import PermVDH from './pages/permVDH/PermVDH'
+import PermR4 from './pages/permR4/permR4'
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;

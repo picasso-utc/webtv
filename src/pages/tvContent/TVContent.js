@@ -1,6 +1,6 @@
 import React from 'react';
-import { URL, API_URL } from '../utils/Config';
-import { ajaxGet } from '../utils/Ajax';
+import { URL, API_URL } from '../../utils/Config';
+import { ajaxGet } from '../../utils/Ajax';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 

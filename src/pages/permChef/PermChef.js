@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { ajaxPost } from '../utils/Ajax'
+import { ajaxPost } from '../../utils/Ajax'
 import Grid from '@material-ui/core/Grid'
-import ClanBar from '../components/permChef/ClanBar'
-import logoKB from '../assets/logoKB.png'
-import logoVB from '../assets/logoVB.png'
-import logoYoua from '../assets/logoYoua.png'
-import logoTampi from '../assets/logoTampi.png'
+import ClanBar from '../../components/permChef/ClanBar'
+import logoKB from '../../assets/permChef/logoKB.png'
+import logoVB from '../../assets/permChef/logoVB.png'
+import logoYoua from '../../assets/permChef/logoYoua.png'
+import logoTampi from '../../assets/permChef/logoTampi.png'
 import './permChef.css'
 
 const PermChef = () => {

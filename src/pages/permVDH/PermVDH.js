@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { ajaxPost } from '../utils/Ajax'
+import { ajaxPost } from '../../utils/Ajax'
 import Grid from "@material-ui/core/Grid";
-import DonsBar from '../components/PermVDH/DonsBar'
+import DonsBar from '../../components/permVDH/DonsBar'
 import './permVDH.css'
 
 
@@ -41,10 +41,10 @@ const PermVDH = () => {
     return (
         <Grid class="mainContainerVDH">
             <div className='blurEffect'>
-                <div class="vdhText">
+                <div className="vdhText">
                     <p><strong>PERM VDH</strong></p>
                     <p>Donnez en faveur du Fil d'Ariane !</p>
-                    <p><span class="montant">{beers.dons10.dons10.quantity * 0.1 + beers.dons50.dons50.quantity * 0.5}</span> EUROS RECOLTES</p>
+                    <p><span className="montant">{beers.dons10.dons10.quantity * 0.1 + beers.dons50.dons50.quantity * 0.5}</span> EUROS RECOLTES</p>
                 </div>
                 <DonsBar color="#009900"  points={beers.dons10.dons10.quantity * 0.1 + beers.dons50.dons50.quantity * 0.5} objectif={500}/>
             </div>

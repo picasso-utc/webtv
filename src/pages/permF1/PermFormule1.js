@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { ajaxPost } from '../utils/Ajax';
-import { asset_url } from '../utils/Config';
+import { ajaxPost } from '../../utils/Ajax';
+import { asset_url } from '../../utils/Config';
 import Grid from '@material-ui/core/Grid';
 
 
