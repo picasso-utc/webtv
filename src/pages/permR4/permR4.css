@@ -1,6 +1,6 @@
 @font-face {
   font-family: "LemonMilk";
-  src: url("../assets/permR4/LemonMilk.otf");
+  src: url("../../assets/permR4/LemonMilk.otf");
 }
 
 .container{
@@ -8,8 +8,7 @@
   flex-direction: column;
   justify-content: space-around;
   height: 100vh;
-  font-family: LemonMilk;
-  background-image: url("../assets/permR4/fond.png");
+  background-image: url("../../assets/permR4/fond.png");
   background-size: cover;
   color : white;
 }
@@ -17,7 +16,6 @@
 hr{
   margin-left: 0;
   margin-right: 0;
-  width: var(--gap);
   border-color : white;
   background-color: white;
 }

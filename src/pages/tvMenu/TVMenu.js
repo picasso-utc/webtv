@@ -2,8 +2,8 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { asset_url } from '../utils/Config';
-import { ajaxGet } from '../utils/Ajax';
+import { asset_url } from '../../utils/Config';
+import { ajaxGet } from '../../utils/Ajax';
 
 
 class TVContent extends React.Component {

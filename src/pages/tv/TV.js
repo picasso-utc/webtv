@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { ajaxGet } from '../utils/Ajax';
-import { asset_url } from '../utils/Config';
+import { ajaxGet } from '../../utils/Ajax';
+import { asset_url } from '../../utils/Config';
 
 
 class TV extends React.Component {
@@ -28,7 +28,7 @@ class TV extends React.Component {
         }
     }
 
-    reloadTv(){
+    reloadTV(){
         window.location.reload();
     }
 
