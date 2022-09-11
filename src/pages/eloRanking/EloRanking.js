@@ -26,6 +26,7 @@ const EloRanking = () => {
     }
 
     useEffect(() => {
+        fetchRanking()
         const interval = setInterval(() => {
             fetchRanking()
         }, 30 * 60 * 1000)
