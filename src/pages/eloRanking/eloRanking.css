@@ -1,0 +1,25 @@
+.elo-ranking-main-container {
+    background-color: #000223;
+    color: white;
+    font-weight: 600;
+    height: 100vh;
+    padding: 2%;
+}
+
+.elo-ranking-red-square {
+    border: solid 2px #B22132;
+    height: 100%;
+    text-align: center;
+}
+
+.elo-ranking-left-column {
+    border-right: solid 1px white;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.elo-ranking-right-column {
+    border-left: solid 1px white;
+    height: 80vh;
+    overflow: hidden;
+}

@@ -1,0 +1,19 @@
+.ranking-item-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 30px;
+}
+
+.ranking-item-container h2 {
+    margin: 0;
+}
+
+.ranking-item-container-left-text {
+    flex: 1;
+    text-align: left;
+}
+
+.ranking-item-container-right-text {
+    flex: 1;
+    text-align: end;
+}
