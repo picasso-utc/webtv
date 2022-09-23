@@ -8,12 +8,22 @@
     margin: 0;
 }
 
-.ranking-item-container-left-text {
-    flex: 4;
+.ranking-item-container-rank-text {
+    flex: 1;
     text-align: left;
 }
 
-.ranking-item-container-right-text {
+.ranking-item-container-name-text {
+    flex: 5;
+    text-align: left;
+}
+
+.ranking-item-container-game-text {
+    flex: 2;
+    text-align: left;
+}
+
+.ranking-item-container-elo-text {
     flex: 1;
     text-align: end;
 }
