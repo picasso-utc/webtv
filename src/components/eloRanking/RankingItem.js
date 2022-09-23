@@ -14,7 +14,7 @@ const RankingItem = ({ ranking, name, nbGame, nbWin, elo }) => (
             <h2>{nbGame}</h2>
         </div>
         <div className='ranking-item-container-game-text'>
-            <h2>{!isNaN(nbWin / nbGame) ? `${(nbWin / nbGame).toFixed(2)} %` : 'WinRate'}</h2>
+            <h2>{!isNaN(nbWin / nbGame) ? `${(nbWin / nbGame * 100).toFixed(0)} %` : 'WinRate'}</h2>
         </div>
         <div className='ranking-item-container-elo-text'>
             <h2>{elo}</h2>
