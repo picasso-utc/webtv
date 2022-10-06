@@ -11,10 +11,11 @@ import TVDuelBrasseur from './pages/duelBrasseur/TVDuelBrasseur';
 import TVDuelBrasseur2 from './pages/duelBrasseur/TVDuelBrasseur2';
 import PermPic from './pages/permPic/PermPic';
 import PermFormule1 from "./pages/permF1/PermFormule1";
-import PermChef from './pages/permChef/PermChef'
-import PermVDH from './pages/permVDH/PermVDH'
-import PermR4 from './pages/permR4/permR4'
-import EloRanking from './pages/eloRanking/EloRanking'
+import PermChef from './pages/permChef/PermChef';
+import PermVDH from './pages/permVDH/PermVDH';
+import PermR4 from './pages/permR4/permR4';
+import PermIF from './pages/permIF/permIF';
+import EloRanking from './pages/eloRanking/EloRanking';
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -34,6 +35,7 @@ class App extends React.Component {
 					<Route path="/duelbrasseur2" exact component={TVDuelBrasseur2}/>
 					<Route path="/permf1" exact component={PermFormule1}/>
 					<Route path="/permchef" exact component={PermChef}/>
+					<Route path="/permif" exact component={PermIF}/>
 					<Route path="/permvdh" exact component={PermVDH}/>
 					<Route path="/permR4" exact component={PermR4}/>
 					<Route path="/elo" exact component={EloRanking}/>
