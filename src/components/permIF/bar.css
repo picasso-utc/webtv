@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.globalbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    height: 100%;
+    font-family: 'Montserrat';
+    color: white;
+    text-transform: uppercase;
+    background-image: url(../../assets/permIF/fond_bar.png);
+    background-size: cover;
+    border-radius: 45px;
+    justify-content: space-between;
+}
+
+.beerlogo {
+    width: 75px;
+    margin: 10px;
+}
+
+.name {
+    margin: 30px;
+}
+
+.percents {
+    margin: 30px;
+}
