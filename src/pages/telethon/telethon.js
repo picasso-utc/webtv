@@ -486,9 +486,11 @@ const Telethon = () => {
     const [total, setTotal] = useState(0);
 
     const load = () => {
+        console.log('load');
         ajaxPost('payutc/public/beers/sells', {'beers': sells}).then(
             res => {
                 setSells(res.data.beers)
+                console.log(res.data.beers)
             }
         )
 
@@ -501,9 +503,10 @@ const Telethon = () => {
     }
 
     useEffect(() => {
+        load()
         const interval = setInterval(() => {
             load()
-        }, 50 * 1000);
+        }, 30 * 1000);
         return () => clearInterval(interval);
     }, [])
 
