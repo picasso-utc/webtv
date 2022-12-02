@@ -1,9 +1,10 @@
-.barcontainer{
+.bardoncontainer{
     display: flex;
     background-color: black;
     align-items: center;
     padding: 0.5rem;
     border-radius: 5rem;
+    width: 100%;
 }
 
 .advancing {
@@ -22,14 +23,14 @@
     font-weight: bold;
 }
 
-.globalbar {
+.globaldonbar {
     width: 80%;
     height: 15%;
     display: flex;
     flex-direction: column;
 }
 
-.globalbar > .hours {
+.globaldonbar > .hours {
     margin: 1rem 2rem;
     display: flex;
     flex-direction: row;

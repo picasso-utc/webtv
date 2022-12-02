@@ -4,12 +4,12 @@ import "./totalbar.css"
 
 const Totalbar = ({total}) => {
     return (
-        <div className='globalbar'>
-            <div className="barcontainer">
+        <div className='globaldonbar'>
+            <div className="bardoncontainer">
                 <div
                     className="advancing"
                     style={{
-                        width: 15 + total * 100 / 3000 + '%'
+                        width: 15 + total * 85 / 3000 + '%'
                     }}
                 >
                     <p>{total} €</p>
