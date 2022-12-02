@@ -493,33 +493,36 @@ const Telethon = () => {
                 console.log(res.data.beers)
             }
         )
-
-        let tot = 0;
-        for (let i in sells.alls) {
-            tot += sells.alls[i].quantity * prices[i]
-        }
-        setTotal(Math.floor(tot))
-
     }
 
     useEffect(() => {
         load()
         const interval = setInterval(() => {
             load()
-        }, 30 * 1000);
+        }, 60 * 1000);
         return () => clearInterval(interval);
     }, [])
 
-    return (
-        <div className="telethonperm">
-            <div className="header">
-                <h1>TELETHON</h1>
-                <p>Tout le chiffre d'affaire du Pic'Asso est reversé au Téléthon aujourd'hui ! L'heure de fermeture ce
-                    soir est dictée par le montant reversé au Téléthon !</p>
+    useEffect(() => {
+        let tot = 0;
+        for (let i in sells.alls) {
+            tot += sells.alls[i].quantity * prices[i]
+            console.log(tot)
+        }
+        setTotal(Math.floor(tot))
+    }, [sells])
+
+        return (
+            <div className="telethonperm">
+                <div className="header">
+                    <h1>TELETHON</h1>
+                    <p>Tout le chiffre d'affaire du Pic'Asso est reversé au Téléthon aujourd'hui ! L'heure de fermeture ce
+                        soir est dictée par le montant reversé au Téléthon !</p>
+                </div>
+                <Totalbar total={total}/>
             </div>
-            <Totalbar total={total}/>
-        </div>
-    );
+
+       );
 };
 
 export default Telethon;
