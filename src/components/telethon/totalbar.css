@@ -1,0 +1,39 @@
+.barcontainer{
+    display: flex;
+    background-color: black;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 5rem;
+}
+
+.advancing {
+    background-color: white;
+    color: black;
+    height: 100%;
+    border-radius: 4.5rem;
+    display: flex;
+    max-width: 100%;
+}
+
+.advancing > p {
+    align-self: center;
+    margin-left: 10%;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.globalbar {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.globalbar > .hours {
+    margin: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
