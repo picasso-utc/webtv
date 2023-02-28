@@ -1,0 +1,24 @@
+.mainContainerVDH {
+    background-image: url('../../assets/permVDH/permVDH.png');
+}
+
+.blurEffect {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(3px); /* assure la compatibilité avec safari */
+    backdrop-filter: blur(3px);
+    background-color: rgba(182, 182, 182, 0.2);
+}
+
+.vdhText {
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.montant {
+    font-style: italic;
+}
