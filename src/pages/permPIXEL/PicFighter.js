@@ -155,7 +155,7 @@ class PicFighter extends React.Component {
                                 src={asset_url("/images/deliPixel.png")}
                                 alt="delirium">
                             </img>
-                            <p className="beer_label">x{this.state.drinks.filter((element) => element.title === "cuvee")[0].total}</p>
+                            <p className="beer_label">x{this.state.drinks.filter((element) => element.title === "delirium")[0].total}</p>
                         </div>
                         <div className="beer_wrapper">
                             <img className={`beer_img delirium ${(this.state.selected === "cuvee") ? "beer_img-selected" : ""}`}
@@ -167,9 +167,9 @@ class PicFighter extends React.Component {
                         <div className="beer_wrapper">
                             <img className={`beer_img delirium ${(this.state.selected === "mordue") ? "beer_img-selected" : ""}`}
                                 src={asset_url("/images/morduePixel.png")}
-                                alt="cuvée">
+                                alt="mordue">
                             </img>
-                            <p className="beer_label">x{this.state.drinks.filter((element) => element.title === "cuvee")[0].total}</p>    
+                            <p className="beer_label">x{this.state.drinks.filter((element) => element.title === "mordue")[0].total}</p>    
                         </div>
                     </div>
                     <div className="right">
