@@ -139,9 +139,6 @@ class PicFighter extends React.Component {
 
 		return (
             <Box className={classes.root}>
-                    <Box className={classes.overlay} />
-                        <video style={styles.video} src={animationUrl} autoPlay loop muted />
-                    <Typography variant="h1" className={classes.text}>
                     <div className="HUD">
                         <img src = {asset_url("/images/HUD.png")}></img>
                     </div>
@@ -198,8 +195,6 @@ class PicFighter extends React.Component {
                             </img>  
                         </div>   
                     </div>
-                    </Typography>
-                    
                 </Box>
                 
 		);
@@ -208,10 +203,13 @@ class PicFighter extends React.Component {
 
 const styles = theme => ({
     root: {
+      height: '100vh',
+      width: '100vw',
       backgroundImage: 'url(./images/background.jpg)',
-      backgroundSize: 'cover',
+      backgroundColor: 'black',
       backgroundPosition: 'center',
-      minHeight: '100vh',
+      backgroundSize: 'contain',
+      backgroundOpacity: '50%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
