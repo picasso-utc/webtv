@@ -45,7 +45,8 @@ class PermPic extends React.Component {
             duel : {
                 score_1 : '',
                 score_2 : '',
-            }
+            },
+            imageSrc : ""
         }
 	}
 

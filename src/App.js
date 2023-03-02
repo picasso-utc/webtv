@@ -17,6 +17,7 @@ import Telethon from "./pages/telethon/telethon";
 import PermChef from './pages/permChef/PermChef';
 import PermIF from './pages/permIF/permIF';
 import EloRanking from './pages/eloRanking/EloRanking';
+import PicFighter from './pages/permPIXEL/PicFighter';
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -41,6 +42,7 @@ class App extends React.Component {
 					<Route path="/permR4" exact component={PermR4}/>
 					<Route path="/elo" exact component={EloRanking}/>
 					<Route path="/telethon" exact component={Telethon}/>
+					<Route path="/picfighter" exact component={PicFighter}/>
 				</Switch>
 			</BrowserRouter>
 		)

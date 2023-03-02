@@ -5,7 +5,7 @@ build/
 
 # Config
 
-/src/utils/Config.js
+src/utils/Config.js
 
 # Misc
 
