@@ -52,7 +52,7 @@ class PicFighter extends React.Component {
             ],
             attackQueue : [],
             attacking : false,
-            animationUrl : 'idle.png',
+            animationUrl : 'images/idle.gif',
             selected: ''
         }
 	}
