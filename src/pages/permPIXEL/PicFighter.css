@@ -21,6 +21,8 @@
     display: block;
     width: 1000px;
     height: 200%;
+    position:relative;
+    top: 100px;
 
 }
 
