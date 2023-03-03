@@ -53,7 +53,9 @@ class PicFighter extends React.Component {
             attackQueue : [],
             attacking : false,
             animationUrl : 'images/idle.gif',
-            selected: ''
+            selected: '',
+            leftHealth : 290,
+            rightHealth : 290
         }
 	}
 
@@ -76,7 +78,16 @@ class PicFighter extends React.Component {
     async handleAttack(){
         if(this.state.attacking) return;
         if(this.state.attackQueue.length <= 0) return;
-
+        if(this.state.leftHealth <= 0) {
+            this.setState({leftHealth : 290});
+            this.setState({rightHealth : 290});
+            return;            
+        }
+        if(this.state.rightHealth <= 0) {
+            this.setState({leftHealth : 290});
+            this.setState({rightHealth : 290});
+            return;            
+        }
         // LOCK
         this.setState({
             attacking : true
@@ -101,6 +112,16 @@ class PicFighter extends React.Component {
         if (side == 'left') this.state.animationUrl = asset_url("/images/left_hit.gif")
         if (side == 'right') this.state.animationUrl = asset_url("/images/right_hit.gif")
         
+        // HEALTH
+        if (side === 'left')
+            this.setState({
+                leftHealth : this.state.leftHealth - 5
+            });
+        if (side === 'right')
+            this.setState({
+                rightHealth : this.state.rightHealth - 5
+            });
+
         await this.sleep(700)
 
         // UNLOCK
@@ -141,6 +162,8 @@ class PicFighter extends React.Component {
             <Box className={classes.root}>
                     <div className="HUD">
                         <img src = {asset_url("/images/HUD.png")}></img>
+                        <div className={`hp-rectangle ${classes.rectangleLeft}`} style={{ width: this.state.rightHealth }}></div>
+                        <div className={`hp-rectangle ${classes.rectangleRight}`} style={{ width: this.state.leftHealth }}></div>
                     </div>
                     <div className="fight">
                         <img className="attack"
@@ -195,6 +218,9 @@ class PicFighter extends React.Component {
                             </img>  
                         </div>   
                     </div>
+                    <div id="footer">
+                        <p>NUMERO STOP VSS : 0658358728</p>
+                    </div>
                 </Box>
                 
 		);
@@ -235,6 +261,20 @@ const styles = theme => ({
     text: {
       color: '#fff',
       zIndex: 2,    
+    },
+    rectangleLeft :{
+        position: 'absolute',
+        left: '127px',
+        top: '60px',
+        height: '38px',
+        background: '#01FF36',
+    },
+    rectangleRight :{
+        position: 'absolute',
+        right: '127px',
+        top: '60px',
+        height: '38px',
+        background: '#01FF36',
     }
   });
 
