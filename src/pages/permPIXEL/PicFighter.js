@@ -49,6 +49,18 @@ class PicFighter extends React.Component {
                     total: 0,
                     team: "left"
                 },
+                {
+                    id : 20,
+                    title : 'coca',
+                    total : 0,
+                    team : "right"
+                },
+                {
+                    id : 2045,
+                    title : 'redbull',
+                    total : 0,
+                    team : "left"
+                }
             ],
             attackQueue : [],
             attacking : false,
@@ -194,6 +206,13 @@ class PicFighter extends React.Component {
                             </img>
                             <p className="beer_label">x{this.state.drinks.filter((element) => element.title === "mordue")[0].total}</p>    
                         </div>
+                        <div className="beer_wrapper">
+                            <img className={`beer_img delirium ${(this.state.selected === "redbull") ? "beer_img-selected" : ""}`}
+                                src={asset_url("/images/redbullPixel.png")}
+                                alt="redbull">
+                            </img>  
+                            <p className="beer_label">x{this.state.drinks.filter((element) => element.title === "redbull")[0].total}</p>
+                        </div>
                     </div>
                     <div className="right">
                         <div className="beer_wrapper">
@@ -216,7 +235,14 @@ class PicFighter extends React.Component {
                                 src={asset_url("/images/valdieuPixel.png")}
                                 alt="valdieu">
                             </img>  
-                        </div>   
+                        </div> 
+                        <div className="beer_wrapper">
+                        <p className="beer_label">x{this.state.drinks.filter((element) => element.title === "coca")[0].total}</p>
+                            <img className={`beer_img delirium ${(this.state.selected === "coca") ? "beer_img-selected" : ""}`}
+                                src={asset_url("/images/cocaPixel.png")}
+                                alt="coca">
+                            </img>  
+                        </div>
                     </div>
                     <div id="footer">
                         <p>NUMERO STOP VSS : 0658358728</p>
