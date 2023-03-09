@@ -1,4 +1,4 @@
-export const URL = "http://localhost:8000" // URL de l'API
+export const URL = "https://kraken.picasso-utc.fr" // URL de l'API
 export const API_URL = URL + "/api/"
 
 export const PUBLIC_URL = process.env.PUBLIC_URL || '';
