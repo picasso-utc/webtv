@@ -38,10 +38,17 @@ class Barbar extends React.Component {
             res => {
 
                 for(let i = 0; i < this.state.drinks.length; i++) {
-                    this.setState({
-                        ventes : res.data.drinks[i].total,
-                        quantitéL : (135 - res.data.drinks[i].total/3).toFixed(2)
-                    })
+                    if (135 - res.data.drinks[i].total/3 > 0) {
+                        this.setState({
+                            ventes : res.data.drinks[i].total,
+                            quantitéL : (135 - res.data.drinks[i].total/3).toFixed(2)
+                        })
+                    } else {
+                        this.setState({
+                            ventes : res.data.drinks[i].total,
+                            quantitéL : 0
+                        })                        
+                    }
                     
 
                 }
