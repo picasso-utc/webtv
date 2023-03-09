@@ -11,7 +11,7 @@ class Barbar extends React.Component {
         this.state = {
             drinks : [
                 {
-                    id: 14821,
+                    id: 1667,
                     title : 'barbar',
                     total: 0
                 }
