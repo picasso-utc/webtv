@@ -25,15 +25,16 @@ class TVContent extends React.Component {
         this.init();
     }
 
-    init(){
-        this.loadTVContent();
-        // Récupération des médias toutes les 30s
-        setInterval(() => this.loadTVContent(), 30 * 1000);
-        this.displayMedia();
+    async init(){
+        await this.loadTVContent().then(() =>{
+            // Récupération des médias toutes les 30s
+            setInterval(() => this.loadTVContent(), 30 * 1000);
+            this.displayMedia();
+        }
+        )
     }
 
     displayMedia(){
-
         const params = this.loadNextMedia()
         if(params){
             if (params.media_type === "I") {
