@@ -15,10 +15,8 @@ class CheerUT extends React.Component {
     }
 
 	componentDidMount(){
-        /*
         this.loadLikes();
         setInterval(() => this.loadLikes(), 5 * 60 * 1000);
-        */
     }
     ajaxGet(path, config = {}) {
         return axios.get(path, config);
