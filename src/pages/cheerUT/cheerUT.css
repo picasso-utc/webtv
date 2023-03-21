@@ -1,0 +1,89 @@
+body {
+    background-image: url("../../../public/images/cheerUT_background.png");
+    background-size:100vw 100vh;
+}
+
+
+.counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+.counter img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    margin:10px;
+}
+
+.counter span {
+    font-size: 36px;
+}
+
+.counter p {
+    font-size: 18px;
+}
+
+.iconBlock {
+    position:relative;
+}
+
+.asterix {
+    background-color: rgb(188, 67, 67);
+
+    font-size: 15px;
+    font-weight: bold;
+    
+    width: 35px;
+    height:25px;
+
+    color:white;
+
+    padding: 20px;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 40px;
+
+    position: absolute;
+    right: 0; 
+    top: -20px;
+
+    transform: rotateZ(8deg);
+}
+
+.asterixObelix {
+    position:absolute;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 3px;
+
+    text-align: center;
+
+    left: 0;
+    right: 0;
+    bottom: 100px;
+
+    width: 175px;
+
+    background-color: rgb(188, 67, 67);
+
+    transform: rotateZ(2deg);
+
+    font-size: 12px;
+
+    color: white;
+    font-weight: bold;
+}
