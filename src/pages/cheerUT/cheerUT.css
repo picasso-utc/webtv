@@ -26,11 +26,11 @@ body {
 }
 
 .counter span {
-    font-size: 36px;
+    font-size: 8em;
 }
 
 .counter p {
-    font-size: 18px;
+    font-size: 3em;
 }
 
 .iconBlock {
@@ -40,7 +40,7 @@ body {
 .asterix {
     background-color: rgb(188, 67, 67);
 
-    font-size: 15px;
+    font-size: 35px !important;
     font-weight: bold;
     
     width: 35px;
@@ -57,7 +57,7 @@ body {
 
     position: absolute;
     right: 0; 
-    top: -20px;
+    top: 15px;
 
     transform: rotateZ(8deg);
 }
@@ -76,13 +76,13 @@ body {
     right: 0;
     bottom: 100px;
 
-    width: 175px;
+    width: 450px;
 
     background-color: rgb(188, 67, 67);
 
     transform: rotateZ(2deg);
 
-    font-size: 12px;
+    font-size: 2em;
 
     color: white;
     font-weight: bold;
