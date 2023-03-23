@@ -1,0 +1,102 @@
+
+@font-face {
+    font-family: 'Dalek';
+    src: url('../../../public/font/Sabo-Filled.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+.body {
+    height: 100%;
+    width: auto;
+    background-color: rgb(184, 59, 59);
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    opacity : 20;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Dalek';
+    font-size:15px;  
+    color:#ffffff;
+    background-image: url('../../../public/images/JeudiRougeBG.png');
+  }
+
+.rectangle {
+    position: relative;
+    bottom : 0px;
+    width: 41px;
+    background: #740707;
+    z-index: 1;
+    outline: solid;
+    outline-color: #FFBCBC;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+  }
+
+.image{
+  position: relative;
+  size : 200px;
+}
+
+.deliRed {
+    position: absolute;
+    left: 4vw;
+    bottom: 8vh;
+    z-index: 1;
+    margin: 0;
+    margin-block-start : 0;
+    display: inline-table;
+  }
+
+.rougeMax{
+    position: absolute;
+    left: 15vw;
+    bottom: 8vh;
+    z-index: 1;
+  }
+
+.teteDeMort{
+    position: absolute;
+    left: 26vw;
+    bottom: 8vh;
+    z-index: 1;
+  }
+  
+.rinceCochonRed{
+    position: absolute;
+    left: 39vw;
+    bottom: 8vh;
+    z-index: 1;
+  }
+
+.chouffeCherry{
+    position: absolute;
+    left: 53vw;
+    bottom: 8vh;
+    z-index: 1;
+  }
+
+.vieuxLille{
+    position: absolute;
+    left: 65vw;
+    bottom: 8vh;
+    z-index: 1;
+  }
+
+.walktrc{
+    position: absolute;
+    left: 75vw;
+    bottom: 8vh;
+    z-index: 1;
+}
+
+.redPoule{
+    position: absolute;
+    left: 90vw;
+    bottom: 8vh;
+    z-index: 1;
+}

@@ -149,7 +149,6 @@ class PicFighter extends React.Component {
     loadDrinks(){
         ajaxPost('payutc/public/drinks/sells', {'drinks' : this.state.drinks}).then(
             res => {
-
                 for(let i = 0; i < this.state.drinks.length; i++) {
                     const delta = res.data.drinks[i].total - this.state.drinks[i].total;
                     

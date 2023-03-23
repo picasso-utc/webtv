@@ -19,6 +19,7 @@ import PermIF from './pages/permIF/permIF';
 import EloRanking from './pages/eloRanking/EloRanking';
 import PicFighter from './pages/permPIXEL/PicFighter';
 import Barbar from './pages/Barbar/Barbar';
+import JeudiRouge from './pages/JeudiRouge/JeudiRouge';
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -45,6 +46,7 @@ class App extends React.Component {
 					<Route path="/telethon" exact component={Telethon}/>
 					<Route path="/picfighter" exact component={PicFighter}/>
 					<Route path="/barbar" exact component={Barbar}/>
+					<Route path="/jeudirouge" exact component={JeudiRouge}/>
 				</Switch>
 			</BrowserRouter>
 		)
