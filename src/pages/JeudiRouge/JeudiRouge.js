@@ -88,41 +88,41 @@ class JeudiRouge extends React.Component {
         const vieuxLille = this.state.drinks.find(x => x.id == 19283).total;
         const walktrc = this.state.drinks.find(x => x.id == 19025).total;
         const redPoule = this.state.drinks.find(x => x.id == 19282).total; 
-        
-        console.log(deliRed)
+
+        console.log(rinceCochonRed)
 
         return (
             <div className='body'>
                 <div className='deliRed'>
-                    <div className='rectangle' style={{height: deliRed}}></div>
+                    <div className='rectangle' style={{height: deliRed*1.75}}></div>
                     <img className='image' src={asset_url("/images/deliRed.png")}></img>
                 </div>
                 <div className='rougeMax'>
-                    <div className='rectangle' style={{height: rougeMax}}></div>
+                    <div className='rectangle' style={{height: rougeMax*1.75}}></div>
                     <img className='image' src={asset_url("/images/rougeMax.png")}></img>
                 </div>
                 <div className='teteDeMort'>
-                    <div className='rectangle' style={{height: teteDeMort}}></div>
+                    <div className='rectangle' style={{height: teteDeMort*1.75}}></div>
                     <img className='image' src={asset_url("/images/teteDeMort.png")}></img>
                 </div>
                 <div className='rinceCochonRed'>
-                    <div className='rectangle' style={{height: rinceCochonRed}}></div>
+                    <div className='rectangle' style={{height: rinceCochonRed*1.75}}></div>
                     <img className='image' src={asset_url("/images/rinceCochonRed.png")}></img>
                 </div>
                 <div className='chouffeCherry'>
-                    <div className='rectangle' style={{height: chouffeCherry}}></div>
+                    <div className='rectangle' style={{height: chouffeCherry*1.75}}></div>
                     <img className='image' src={asset_url("/images/chouffeCherry.png")}></img>
                 </div>
                 <div className='vieuxLille'>
-                    <div className='rectangle' style={{height: vieuxLille}}></div>
+                    <div className='rectangle' style={{height: vieuxLille*1.75}}></div>
                     <img className='image' src={asset_url("/images/vieuxLille.png")}></img>
                 </div>
                 <div className='walktrc'>
-                    <div className='rectangle' style={{height: walktrc}}></div>
+                    <div className='rectangle' style={{height: walktrc*1.75}}></div>
                     <img className='image' src={asset_url("/images/walkTRC.png")}></img>
                 </div>
                 <div className='redPoule'>
-                    <div className='rectangle' style={{height: redPoule}}></div>
+                    <div className='rectangle' style={{height: redPoule*1.75}}></div>
                     <img className='image' src={asset_url("/images/redPoule.png")}></img>
                 </div>
                 <img className="bg" src={asset_url("/images/JeudiRougeBG.png")}></img>
