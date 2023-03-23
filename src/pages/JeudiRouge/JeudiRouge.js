@@ -16,37 +16,37 @@ class JeudiRouge extends React.Component {
                     total: 0
                 },                
                 {
-                    id: 14821,
+                    id: 19281,
                     title : 'rouge max',
                     total: 0
                 },
                 {
-                    id: 17881,
+                    id: 19280,
                     title : 'tete de mort',
                     total: 0
                 },
                 {
-                    id: 12492,
+                    id: 19279,
                     title : 'rince cochon rouge',
                     total: 0
                 },
                 {
-                    id: 457,
+                    id: 19278,
                     title : 'chouffe cherry',
                     total: 0
                 },
                 {
-                    id: 458,
+                    id: 19283,
                     title : 'vieux lille',
                     total: 0
                 },
                 {
-                    id: 17835,
+                    id: 19025,
                     title : 'walk the red carpet',
                     total: 0
                 },
                 {
-                    id: 20,
+                    id: 19282,
                     title : 'red poule',
                     total: 0
                 },
