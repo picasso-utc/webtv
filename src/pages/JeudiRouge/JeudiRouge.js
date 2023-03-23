@@ -81,13 +81,13 @@ class JeudiRouge extends React.Component {
         const qty = this.state.quantitéL
         const ventes = this.state.ventes
         const deliRed = this.state.drinks.find(x => x.id == 12466).total;
-        const rougeMax = this.state.drinks.find(x => x.id == 14821).total;
-        const teteDeMort = this.state.drinks.find(x => x.id == 17881).total; 
-        const rinceCochonRed = this.state.drinks.find(x => x.id == 12492).total;
-        const chouffeCherry = this.state.drinks.find(x => x.id == 457).total;
-        const vieuxLille = this.state.drinks.find(x => x.id == 458).total;
-        const walktrc = this.state.drinks.find(x => x.id == 17835).total;
-        const redPoule = this.state.drinks.find(x => x.id == 20).total; 
+        const rougeMax = this.state.drinks.find(x => x.id == 19281).total;
+        const teteDeMort = this.state.drinks.find(x => x.id == 19280).total; 
+        const rinceCochonRed = this.state.drinks.find(x => x.id == 19279).total;
+        const chouffeCherry = this.state.drinks.find(x => x.id == 19278).total;
+        const vieuxLille = this.state.drinks.find(x => x.id == 19283).total;
+        const walktrc = this.state.drinks.find(x => x.id == 19025).total;
+        const redPoule = this.state.drinks.find(x => x.id == 19282).total; 
         
         console.log(deliRed)
 
