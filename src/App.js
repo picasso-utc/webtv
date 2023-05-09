@@ -21,6 +21,7 @@ import PicFighter from './pages/permPIXEL/PicFighter';
 import Barbar from './pages/Barbar/Barbar';
 import CheerUT from './pages/cheerUT/cheerUT';
 import JeudiRouge from './pages/JeudiRouge/JeudiRouge';
+import DuelDesBrasseursP23 from './pages/duelDesBrasseursP23/DuelDesBrasseursP23';
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -49,6 +50,7 @@ class App extends React.Component {
 					<Route path="/barbar" exact component={Barbar}/>
 					<Route path="/cheerUT" exact component={CheerUT}/>
 					<Route path="/jeudirouge" exact component={JeudiRouge}/>
+					<Route path="/duelbrasseurP23" exact component={DuelDesBrasseursP23}/>
 				</Switch>
 			</BrowserRouter>
 		)
