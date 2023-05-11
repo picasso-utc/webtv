@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
 import { ajaxPost } from '../../utils/Ajax';
-import { asset_url, TEMP_FACEBOOK_API_KEY } from '../../utils/Config';
+//import { asset_url, TEMP_FACEBOOK_API_KEY } from '../../utils/Config';
 import './cheerUT.css';
 import axios from 'axios';
 

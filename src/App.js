@@ -22,6 +22,7 @@ import Barbar from './pages/Barbar/Barbar';
 import CheerUT from './pages/cheerUT/cheerUT';
 import JeudiRouge from './pages/JeudiRouge/JeudiRouge';
 import DuelDesBrasseursP23 from './pages/duelDesBrasseursP23/DuelDesBrasseursP23';
+import PermIFP23 from './pages/PermIFP23/PermIFP23';
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -51,6 +52,7 @@ class App extends React.Component {
 					<Route path="/cheerUT" exact component={CheerUT}/>
 					<Route path="/jeudirouge" exact component={JeudiRouge}/>
 					<Route path="/duelbrasseurP23" exact component={DuelDesBrasseursP23}/>
+					<Route path="/PermIFP23" exact component={PermIFP23}/>
 				</Switch>
 			</BrowserRouter>
 		)
