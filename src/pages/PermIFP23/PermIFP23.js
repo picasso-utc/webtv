@@ -76,18 +76,14 @@ class PermIFP23 extends React.Component {
         const kasteel = this.state.drinks.find(x => x.id == 14821).total;
         const valDieu = this.state.drinks.find(x => x.id == 12492).total;
         const LBFIPA = this.state.drinks.find(x => x.id == 18442).total;
-        const samedi = kasteel+valDieu+LBFIPA
-        const dimanche = laMordue+Delirium+cuveeTroll
 
         return (
             <div className='body'>
                 <div className='samedi'>
-                    <div className='rectangle' style={{height: ((samedi)/(samedi+dimanche))*300}}></div>
-
+                    <div className='rectangle' style={{height: (kasteel+valDieu+LBFIPA)*0.6}}></div>
                 </div>
                 <div className='dimanche'>
-                    <div className='rectangle' style={{height: ((dimanche)/(samedi+dimanche))*300}}></div>
-
+                    <div className='rectangle' style={{height: (laMordue+Delirium+cuveeTroll)*0.6}}></div>
                 </div>
                 <img className="bg" src={asset_url("/images/BG_IF.png")}></img>
             </div>
