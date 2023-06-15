@@ -23,7 +23,9 @@ import CheerUT from './pages/cheerUT/cheerUT';
 import JeudiRouge from './pages/JeudiRouge/JeudiRouge';
 import DuelDesBrasseursP23 from './pages/duelDesBrasseursP23/DuelDesBrasseursP23';
 import PermIFP23 from './pages/PermIFP23/PermIFP23';
-
+import DuelSillyDeliP23 from './pages/duelSillyDeliP23/duelSillyDeliP23';
+import winnerSilly from './pages/duelSillyDeliP23/winnerSilly';
+import winnerDeli from './pages/duelSillyDeliP23/winnerDeli';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
@@ -53,6 +55,9 @@ class App extends React.Component {
 					<Route path="/jeudirouge" exact component={JeudiRouge}/>
 					<Route path="/duelbrasseurP23" exact component={DuelDesBrasseursP23}/>
 					<Route path="/PermIFP23" exact component={PermIFP23}/>
+					<Route path="/DuelSillyDeliP23" exact component={DuelSillyDeliP23}/>
+					<Route path="/winnerSilly" exact component={winnerSilly}/>
+					<Route path="/winnerDeli" exact component={winnerDeli}/>
 				</Switch>
 			</BrowserRouter>
 		)

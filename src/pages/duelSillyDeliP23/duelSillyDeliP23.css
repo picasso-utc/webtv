@@ -1,0 +1,131 @@
+
+@font-face {
+    font-family: 'Dalek';
+    src: url('../../../public/font/Sabo-Filled.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body {
+    height: 100%;
+    width: auto;
+    background-color: rgb(184, 59, 59);
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    opacity : 20;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Dalek';
+    font-size:15px;
+    color:#ffffff;
+    background-image: url('../../../public/images/duelDesBrasseursP23/duelSillyDeliBG.png');
+}
+
+.jauge {
+    position: relative;
+    bottom : 0px;
+    height: 63px;
+    background: #DCAF46;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 2px rgba(220,175,70, 1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.image{
+    position: absolute;
+    size : 200px;
+}
+
+.averbode{
+    position: absolute;
+    left: 12.7vw;
+    bottom: 68.15vh;
+    z-index: 1;
+}
+
+.corsaire{
+    position: absolute;
+    left: 12.7vw;
+    bottom: 52.85vh;
+    z-index: 1;
+}
+
+.deliRed{
+    position: absolute;
+    left: 12.7vw;
+    bottom: 37.5vh;
+    z-index: 1;
+}
+
+.Floris{
+    position: absolute;
+    left: 12.7vw;
+    bottom: 22.1vh;
+    z-index: 1;
+}
+
+.enghien{
+    position: absolute;
+    right: 12.7vw;
+    bottom: 68.15vh;
+    z-index: 1;
+}
+
+.forest{
+    position: absolute;
+    right: 12.7vw;
+    bottom: 52.85vh;
+    z-index: 1;
+}
+
+.sillyRed{
+    position: absolute;
+    right: 12.7vw;
+    bottom: 37.5vh;
+    z-index: 1;
+}
+
+.sesion{
+    position: absolute;
+    right: 12.7vw;
+    bottom: 22.1vh;
+    z-index: 1;
+}
+
+.Nb_Gauche {
+    position: relative;
+    font-size:30px;
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.Nb_Droit {
+    position: relative;
+    font-size:30px;
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.PtsSilly {
+    position: absolute;
+    font-size:100px;
+    left: 25vw;
+    bottom: -8vh;
+    z-index: 1;
+
+}
+
+.PtsDeli {
+    position: absolute;
+    font-size:100px;
+    right: 25vw;
+    bottom: -8vh;
+    z-index: 1;
+}
+
