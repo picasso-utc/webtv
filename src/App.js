@@ -26,7 +26,6 @@ import PermIFP23 from "./pages/PermIFP23/PermIFP23";
 import DuelSillyDeliP23 from "./pages/duelSillyDeliP23/duelSillyDeliP23";
 import winnerSilly from "./pages/duelSillyDeliP23/winnerSilly";
 import winnerDeli from "./pages/duelSillyDeliP23/winnerDeli";
-import permPicCoule from "./pages/permPicCoule/permPicCoule";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
@@ -46,7 +45,6 @@ class App extends React.Component {
           <Route path="/permf1" exact component={PermFormule1} />
           <Route path="/permchef" exact component={PermChef} />
           <Route path="/permif" exact component={PermIF} />
-          <Route path="/permPicCoule" exact component={permPicCoule} />
           <Route path="/permvdh" exact component={PermVDH} />
           <Route path="/permR4" exact component={PermR4} />
           <Route path="/elo" exact component={EloRanking} />
