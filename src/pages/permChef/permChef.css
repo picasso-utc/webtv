@@ -1,11 +1,11 @@
-.mainContainer {
+.chefMainContainer {
     background-image: url("../../assets/permChef/backgroundPermChef.jpg");
     background-size: cover;
     display: flex;
     justify-content: space-evenly;
 }
 
-.blurEffect {
+.chefBlurEffect {
     align-items: flex-end;
     display: flex;
     height: 100vh;
@@ -16,12 +16,12 @@
     background-color: rgba(182, 182, 182, 0.2);
 }
 
-.bars {
+.chefBars {
     align-items: flex-end;
     display: flex;
 }
 
-.header {
+.chefHeader {
     color: white;
     font-family: "Roboto Slab", sans-serif;
     font-weight: bold;

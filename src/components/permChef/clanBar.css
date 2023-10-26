@@ -1,11 +1,11 @@
-.barContainer {
+.chefBarContainer {
     display: flex;
     flex-direction: column;
     margin: 50px;
     padding-bottom: 50px;
 }
 
-.logoBar {
+.chefLogoBar {
     bottom: 50px;
     border-radius: 45%;
     border: 1px white;
