@@ -26,6 +26,7 @@ import PermIFP23 from "./pages/PermIFP23/PermIFP23";
 import DuelSillyDeliP23 from "./pages/duelSillyDeliP23/duelSillyDeliP23";
 import winnerSilly from "./pages/duelSillyDeliP23/winnerSilly";
 import winnerDeli from "./pages/duelSillyDeliP23/winnerDeli";
+import PermHalloween from "./pages/permHalloween/PermHalloween";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
@@ -53,6 +54,7 @@ class App extends React.Component {
           <Route path="/barbar" exact component={Barbar} />
           <Route path="/cheerUT" exact component={CheerUT} />
           <Route path="/jeudirouge" exact component={JeudiRouge} />
+          <Route path="/permHalloween" exact component={PermHalloween} />
           <Route
             path="/duelbrasseurP23"
             exact
