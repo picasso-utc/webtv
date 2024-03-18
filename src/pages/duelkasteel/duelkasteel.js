@@ -94,11 +94,11 @@ class DuelKasteel extends React.Component {
     // HEALTH
     if (side === "left")
       this.setState({
-        rightHealth: this.state.rightHealth - 20,
+        rightHealth: this.state.rightHealth - 1,
       });
     if (side === "right")
       this.setState({
-        leftHealth: this.state.leftHealth - 20,
+        leftHealth: this.state.leftHealth - 1,
       });
 
     await this.sleep(2375);
