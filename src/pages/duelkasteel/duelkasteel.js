@@ -27,10 +27,10 @@ class DuelKasteel extends React.Component{
             ],
             attackQueue : [],
             attacking : false,
-            animationUrl : 'images/duelkasteel/Righthit.gif',
+            animationUrl : 'images/duelkasteel/idle.gif',
             selected : '',
-            leftHealth : 400,
-            rightHealth : 400
+            leftHealth : 342,
+            rightHealth : 342
         }
     }
 
@@ -53,8 +53,8 @@ class DuelKasteel extends React.Component{
         if(this.state.attacking) return;
         if(this.state.attackQueue.length <= 0) return;
         if(this.state.leftHealth <= 0) {
-            this.setState({leftHealth : 400});
-            this.setState({rightHealth : 400});
+            this.setState({leftHealth : 342});
+            this.setState({rightHealth : 342});
             return;
         }
         if(this.state.rightHealth <= 0) {
@@ -89,14 +89,14 @@ class DuelKasteel extends React.Component{
         // HEALTH
         if (side === 'left')
             this.setState({
-                rightHealth : this.state.rightHealth - 1
+                rightHealth : this.state.rightHealth - 20
             });
         if (side === 'right')
             this.setState({
-                leftHealth : this.state.leftHealth - 1
+                leftHealth : this.state.leftHealth - 20
             });
 
-        await this.sleep(700)
+        await this.sleep(2375)
 
         // UNLOCK
         this.setState({
@@ -135,10 +135,10 @@ class DuelKasteel extends React.Component{
             <Box className={classes.root}>
                 <div className="HUD">
                     <img src={asset_url("/images/duelkasteel/HUD.png")} class="hud"></img>
-                    <div className={`hp-rectangle ${classes.rectangleLeftBorder}`} style={{width: 400}}></div>
-                    <div className={`hp-rectangle ${classes.rectangleLeft}`} style={{width: this.state.rightHealth}}></div>
-                    <div className={`hp-rectangle ${classes.rectangleRightBorder}`} style={{width: 400}}></div>
-                    <div className={`hp-rectangle ${classes.rectangleRight}`} style={{width: this.state.leftHealth}}></div>
+                    <div className={`hp-rectangle ${classes.rectangleLeftBorder}`} style={{width: 342}}></div>
+                    <div className={`hp-rectangle ${classes.rectangleLeft}`} style={{width: this.state.leftHealth}}></div>
+                    <div className={`hp-rectangle ${classes.rectangleRightBorder}`} style={{width: 342}}></div>
+                    <div className={`hp-rectangle ${classes.rectangleRight}`} style={{width: this.state.rightHealth}}></div>
                 </div>
                 <div className="fight">
                     <img className="attack"
