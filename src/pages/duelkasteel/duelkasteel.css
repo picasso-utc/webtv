@@ -5,10 +5,6 @@
     font-style: normal;
 }
 
-.mainContainerVDH {
-    background-image: url('../../assets/permVDH/permVDH.png');
-}
-
 .blurEffect {
     display: flex;
     height: 100vh;
