@@ -27,45 +27,43 @@ import DuelSillyDeliP23 from "./pages/duelSillyDeliP23/duelSillyDeliP23";
 import winnerSilly from "./pages/duelSillyDeliP23/winnerSilly";
 import winnerDeli from "./pages/duelSillyDeliP23/winnerDeli";
 import PermHalloween from "./pages/permHalloween/PermHalloween";
+import Duelkasteel from "./pages/duelkasteel/duelkasteel";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter basename={PUBLIC_URL}>
-        <CssBaseline />
+        <BrowserRouter basename={PUBLIC_URL}>
+          <CssBaseline />
 
-        <Switch>
-          <Route path="/" exact component={TV} />
-          <Route path="/content" exact component={TVContent} />
-          <Route path="/menu" exact component={TVMenu} />
-          <Route path="/duelbrasseur" exact component={TVDuelBrasseur} />
-          <Route path="/pic" exact component={PermPic} />
-          <Route path="/duelbrasseur2" exact component={TVDuelBrasseur2} />
-          <Route path="/permf1" exact component={PermFormule1} />
-          <Route path="/permchef" exact component={PermChef} />
-          <Route path="/permif" exact component={PermIF} />
-          <Route path="/permvdh" exact component={PermVDH} />
-          <Route path="/permR4" exact component={PermR4} />
-          <Route path="/elo" exact component={EloRanking} />
-          <Route path="/telethon" exact component={Telethon} />
-          <Route path="/picfighter" exact component={PicFighter} />
-          <Route path="/barbar" exact component={Barbar} />
-          <Route path="/cheerUT" exact component={CheerUT} />
-          <Route path="/jeudirouge" exact component={JeudiRouge} />
-          <Route path="/permHalloween" exact component={PermHalloween} />
-          <Route
-            path="/duelbrasseurP23"
-            exact
-            component={DuelDesBrasseursP23}
-          />
-          <Route path="/PermIFP23" exact component={PermIFP23} />
-          <Route path="/DuelSillyDeliP23" exact component={DuelSillyDeliP23} />
-          <Route path="/winnerSilly" exact component={winnerSilly} />
-          <Route path="/winnerDeli" exact component={winnerDeli} />
-        </Switch>
-      </BrowserRouter>
+          <Switch>
+            <Route path="/" exact component={TV} />
+            <Route path="/content" exact component={TVContent} />
+            <Route path="/menu" exact component={TVMenu} />
+            <Route path="/duelbrasseur" exact component={TVDuelBrasseur} />
+            <Route path="/pic" exact component={PermPic} />
+            <Route path="/duelbrasseur2" exact component={TVDuelBrasseur2} />
+            <Route path="/permf1" exact component={PermFormule1} />
+            <Route path="/permchef" exact component={PermChef} />
+            <Route path="/permif" exact component={PermIF} />
+            <Route path="/permvdh" exact component={PermVDH} />
+            <Route path="/permR4" exact component={PermR4} />
+            <Route path="/elo" exact component={EloRanking} />
+            <Route path="/telethon" exact component={Telethon} />
+            <Route path="/picfighter" exact component={PicFighter} />
+            <Route path="/barbar" exact component={Barbar} />
+            <Route path="/jeudirouge" exact component={JeudiRouge} />
+            <Route path="/permHalloween" exact component={PermHalloween} />
+            <Route path="/duelbrasseurP23" exact component={DuelDesBrasseursP23}/>
+            <Route path="/PermIFP23" exact component={PermIFP23} />
+            <Route path="/DuelSillyDeliP23" exact component={DuelSillyDeliP23} />
+            <Route path="/winnerSilly" exact component={winnerSilly} />
+            <Route path="/winnerDeli" exact component={winnerDeli} />
+            <Route path="/duelkasteel" exact component={Duelkasteel} />
+
+          </Switch>
+        </BrowserRouter>
     );
   }
 }

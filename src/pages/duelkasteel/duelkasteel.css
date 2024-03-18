@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'Sabo Filled';
+    src: url('../../../public/font/Sabo-Filled.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mainContainerVDH {
+    background-image: url('../../assets/permVDH/permVDH.png');
+}
+
+.blurEffect {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(3px); /* assure la compatibilité avec safari */
+    backdrop-filter: blur(3px);
+    background-color: rgba(182, 182, 182, 0.2);
+}
+.fight {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+}
+.attack {
+    display: block;
+    width: 1000px;
+    height: 200%;
+    position:relative;
+    top: 100px;
+
+}
+
+.right {
+    position: absolute;
+    height: 51px;
+    right : 30px;
+    top:260px;
+}
+
+.left {
+    position: absolute;
+    height: 51px;
+    left: 30px;
+    top : 260px;
+}
+
+.vdhText {
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.montant {
+    font-style: italic;
+}
+.beer_img {
+    opacity: 50%;
+    width: 100px;
+    display: inline-block;
+}
+
+.beer_img-selected {
+    opacity: 100%;
+    box-shadow: 0px 0px 20px rgb(255 255 255);
+    border: 5px solid yellow;
+}
+
+.beer_label {
+    display:inline-block;
+    margin: 10px;
+}
+
+.beer_wrapper {
+    color:white;
+    font-size:40px;
+}
+
+.HUD {
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    position:absolute;
+    top:0px;
+    width : 1000px;
+}
+.HUD img {
+    width: 700px;
+}
+
+.hp-rectangle {
+    transition: .5s ease-in-out;
+
+    height: 42px !important;
+
+    margin-top: 17px;
+}
+
+#footer {
+    width: 100vw;
+    height: 60px;
+    background-color: black;
+    color:white;
+    text-align:center;
+    position:absolute;
+    bottom:0;
+    z-index:200;
+    font-size:40px;
+}
+
+#footer p {
+    margin: 0;
+}
+
+.scoreText {
+    font-family: 'Sabo Filled';
+    font-size:100px;
+    color: white;
+    text-shadow: #FC0 1px 0 10px;
+}
+
+.hud {
+    position: relative;
+    z-index: 3000;
+}
