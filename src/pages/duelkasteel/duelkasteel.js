@@ -29,8 +29,8 @@ class DuelKasteel extends React.Component{
             attacking : false,
             animationUrl : 'images/duelkasteel/idle.gif',
             selected : '',
-            leftHealth : 204,
-            rightHealth : 264
+            leftHealth : 112,
+            rightHealth : 171
         }
     }
 
@@ -148,10 +148,10 @@ class DuelKasteel extends React.Component{
                 </div>
                 <br></br>
                 <div className="left">
-                    <p class="scoreText">{drinks.filter(e => e.team === 'left').map(e => e.total).reduce((a,b) => a + b) + 78}x</p>
+                    <p class="scoreText">{drinks.filter(e => e.team === 'left').map(e => e.total).reduce((a,b) => a + b) + 171}x</p>
                 </div>
                 <div className="right">
-                    <p class="scoreText">x{drinks.filter(e => e.team === 'right').map(e => e.total).reduce((a,b) => a + b) + 138}</p>
+                    <p class="scoreText">x{drinks.filter(e => e.team === 'right').map(e => e.total).reduce((a,b) => a + b) + 230}</p>
                 </div>
             </Box>
 
