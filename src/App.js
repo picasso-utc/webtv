@@ -28,6 +28,7 @@ import winnerSilly from "./pages/duelSillyDeliP23/winnerSilly";
 import winnerDeli from "./pages/duelSillyDeliP23/winnerDeli";
 import PermHalloween from "./pages/permHalloween/PermHalloween";
 import Duelkasteel from "./pages/duelkasteel/duelkasteel";
+import DuelbrasseurP24 from "./pages/duelbrasseurP24/duelbrasseurP24";
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
@@ -61,6 +62,8 @@ class App extends React.Component {
             <Route path="/winnerSilly" exact component={winnerSilly} />
             <Route path="/winnerDeli" exact component={winnerDeli} />
             <Route path="/duelkasteel" exact component={Duelkasteel} />
+            <Route path="/duelbrasseurP24" exact component={DuelbrasseurP24} />
+
 
           </Switch>
         </BrowserRouter>
