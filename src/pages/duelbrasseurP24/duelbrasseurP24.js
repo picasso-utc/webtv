@@ -13,16 +13,28 @@ class DuelKasteel extends React.Component{
         this.state = {
             drinks : [
                 {
-                    id : 20486,
-                    title : 'Kasteel Rubus',
+                    id : 19824,
+                    title : 'Delirium Tremens',
+                    total : 0,
+                    team : "left"
+                },
+                {
+                    id : 20379,
+                    title : 'Paranoia',
+                    total : 0,
+                    team : "left"
+                },
+                {
+                    id : 20500,
+                    title : 'Lupulus Triple',
                     total : 0,
                     team : "right"
                 },
                 {
-                    id : 14821,
-                    title : 'Kasteel Rouge',
+                    id : 20586,
+                    title : 'Lupulus Hopera',
                     total : 0,
-                    team : "left"
+                    team : "right"
                 }
             ],
             attackQueue : [],
@@ -83,8 +95,8 @@ class DuelKasteel extends React.Component{
     }
 
     async playAttackAnimation(side) {
-        if (side == 'left') this.state.animationUrl = asset_url("/images/duelkasteel/lefthit.gif")
-        if (side == 'right') this.state.animationUrl = asset_url("/images/duelkasteel/righthit.gif")
+        if (side == 'left') this.state.animationUrl = asset_url("/images/duelbrasseurP24/lefthit.gif")
+        if (side == 'right') this.state.animationUrl = asset_url("/images/duelbrasseurP24/righthit.gif")
 
         // HEALTH
         if (side === 'left')
@@ -96,7 +108,7 @@ class DuelKasteel extends React.Component{
                 leftHealth : this.state.leftHealth - 1
             });
 
-        await this.sleep(1187)
+        await this.sleep(2160)
 
         // UNLOCK
         this.setState({
@@ -135,10 +147,12 @@ class DuelKasteel extends React.Component{
             <Box className={classes.root}>
                 <div className="HUD">
                     <img src={asset_url("/images/duelbrasseurP24/HUD.png")} class="hud"></img>
-                    <div className={`hp-rectangle ${classes.rectangleLeftBorder}`} style={{width: 342}}></div>
-                    <div className={`hp-rectangle ${classes.rectangleLeft}`} style={{width: this.state.leftHealth}}></div>
-                    <div className={`hp-rectangle ${classes.rectangleRightBorder}`} style={{width: 342}}></div>
-                    <div className={`hp-rectangle ${classes.rectangleRight}`} style={{width: this.state.rightHealth}}></div>
+                    <div className="left">
+                        <p className="scoreText">{drinks.filter(e => e.team === 'left').map(e => e.total).reduce((a, b) => a + b)}x</p>
+                    </div>
+                    <div className="right">
+                        <p className="scoreText">x{drinks.filter(e => e.team === 'right').map(e => e.total).reduce((a, b) => a + b)}</p>
+                    </div>
                 </div>
                 <div className="fight">
                     <img className="attack"
@@ -147,12 +161,7 @@ class DuelKasteel extends React.Component{
                     </img>
                 </div>
                 <br></br>
-                <div className="left">
-                    <p class="scoreText">{drinks.filter(e => e.team === 'left').map(e => e.total).reduce((a,b) => a + b)}x</p>
-                </div>
-                <div className="right">
-                    <p class="scoreText">x{drinks.filter(e => e.team === 'right').map(e => e.total).reduce((a,b) => a + b)}</p>
-                </div>
+
             </Box>
 
         );
