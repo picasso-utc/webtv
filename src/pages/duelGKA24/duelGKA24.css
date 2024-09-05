@@ -20,14 +20,13 @@
     font-family: 'Dalek';
     font-size:15px;
     color:#ffffff;
-    background-image: url('../../../public/images/duelDesBrasseursP23/duelSillyDeliBG.png');
 }
 
 .jauge {
     position: relative;
     bottom : 0px;
-    height: 63px;
-    background: #DCAF46;
+    height: 55.9px;
+    background: #dcaf46;
     z-index: 1;
     box-shadow: 0px 0px 10px 2px rgba(220,175,70, 1);
     margin-left: auto;
@@ -35,50 +34,45 @@
     margin-bottom: 5px;
 }
 
-.image{
-    position: absolute;
-    size : 200px;
-}
-
 .cuvee{
     position: absolute;
-    left: 12.7vw;
-    bottom: 68.15vh;
+    left: 277px;
+    top: 180.5px;
     z-index: 1;
 }
 
 .rasta{
     position: absolute;
-    left: 12.7vw;
-    bottom: 52.85vh;
+    left: 277px;
+    top: 300.5px;
     z-index: 1;
 }
 
 .lupulus{
     position: absolute;
-    left: 12.7vw;
-    bottom: 37.5vh;
+    left: 277px;
+    top: 421px;
     z-index: 1;
 }
 
 .valdieu{
     position: absolute;
-    right: 12.7vw;
-    bottom: 68.15vh;
+    right: 277px;
+    top: 180.5px;
     z-index: 1;
 }
 
-.angelus{
+.stfeuillien{
     position: absolute;
-    right: 12.7vw;
-    bottom: 52.85vh;
+    right: 277px;
+    top: 300.5px;
     z-index: 1;
 }
 
 .rubus{
     position: absolute;
-    right: 12.7vw;
-    bottom: 37.5vh;
+    right: 277px;
+    top: 421px;
     z-index: 1;
 }
 
@@ -100,7 +94,7 @@
 
 .PtsGnome {
     position: absolute;
-    font-size:100px;
+    font-size:120px;
     left: 25vw;
     bottom: -8vh;
     z-index: 1;
@@ -109,9 +103,37 @@
 
 .PtsKnight {
     position: absolute;
-    font-size:100px;
+    font-size:120px;
     right: 25vw;
     bottom: -8vh;
     z-index: 1;
 }
 
+.bg {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0);
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    opacity : 20;
+  }
+
+
+  .gnome {
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    opacity : 20;
+  }
+
+  
+  .chevalier {
+    background-color: aqua;
+    position: absolute;
+    bottom: -8vh;
+    right: 25vw;
+    z-index: 1;
+  }
