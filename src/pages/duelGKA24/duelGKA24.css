@@ -36,43 +36,43 @@
 
 .cuvee{
     position: absolute;
-    left: 277px;
-    top: 180.5px;
+    left: 260px;
+    top: 175px;
     z-index: 1;
 }
 
 .rasta{
     position: absolute;
-    left: 277px;
-    top: 300.5px;
+    left: 260px;
+    top: 310px;
     z-index: 1;
 }
 
 .lupulus{
     position: absolute;
-    left: 277px;
-    top: 421px;
+    left: 260px;
+    top: 450px;
     z-index: 1;
 }
 
 .valdieu{
     position: absolute;
-    right: 277px;
-    top: 180.5px;
+    right: 253px;
+    top: 175px;
     z-index: 1;
 }
 
 .stfeuillien{
     position: absolute;
-    right: 277px;
-    top: 300.5px;
+    right: 253px;
+    top: 310px;
     z-index: 1;
 }
 
 .rubus{
     position: absolute;
-    right: 277px;
-    top: 421px;
+    right: 253px;
+    top: 449px;
     z-index: 1;
 }
 
