@@ -25,7 +25,7 @@
 .jauge {
     position: relative;
     bottom : 0px;
-    height: 55.9px;
+    height: 72.5px;
     background: #dcaf46;
     z-index: 1;
     box-shadow: 0px 0px 10px 2px rgba(220,175,70, 1);
@@ -36,43 +36,43 @@
 
 .cuvee{
     position: absolute;
-    left: 330px;
-    top: 250px;
+    left: 348px;
+    top: 244px;
     z-index: 1;
 }
 
 .rasta{
     position: absolute;
-    left: 330px;
-    top: 450px;
+    left: 348px;
+    top: 423.5px;
     z-index: 1;
 }
 
 .lupulus{
     position: absolute;
-    left: 330px;
-    top: 630px;
+    left: 348px;
+    top: 609px;
     z-index: 1;
 }
 
 .valdieu{
     position: absolute;
-    right: 320px;
-    top: 250px;
+    right: 338px;
+    top: 244px;
     z-index: 1;
 }
 
 .stfeuillien{
     position: absolute;
-    right: 320px;
-    top: 450px;
+    right: 338px;
+    top: 423.5px;
     z-index: 1;
 }
 
 .rubus{
     position: absolute;
-    right: 320px;
-    top: 630px;
+    right: 338px;
+    top: 607px;
     z-index: 1;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
-import {ajaxGet, ajaxPost} from '../../utils/Ajax';
+import {ajaxGet} from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
 import './duelGKA24.css';
 
