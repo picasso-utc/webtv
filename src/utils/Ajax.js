@@ -2,7 +2,7 @@
  * Sends an HTTP request to the API.
  */
 
-import {API_URL} from './Config'
+import {API_URL, API_URL_2} from './Config'
 import axios from 'axios';
 
 
@@ -11,6 +11,9 @@ const defaultConfig = {withCredentials: true}
 
 function ajaxGet(path) {
     return axios.get(API_URL + path, defaultConfig);
+}
+function ajaxGet2(path) {
+    return axios.get(API_URL_2 + path, defaultConfig);
 }
 
 function ajaxPost(path, data) {
@@ -30,4 +33,4 @@ function ajaxDelete(path) {
 }
 
 
-export { ajaxGet, ajaxPost, ajaxPut, ajaxDelete, ajaxPatch };
+export { ajaxGet, ajaxPost, ajaxPut, ajaxDelete, ajaxPatch, ajaxGet2 };
