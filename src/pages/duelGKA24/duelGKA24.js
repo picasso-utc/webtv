@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
-import { ajaxPost } from '../../utils/Ajax';
+import {ajaxGet, ajaxPost} from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
 import './duelGKA24.css';
 
@@ -25,32 +25,32 @@ class duelGKA24 extends React.Component {
             drinks : [
                 {
                     id: CUVEE_ID,
-                    title : 'Cuvee',
+                    title : 'Croissant',
                     total: 0
                 },
                 {
                     id: RASTA_ID,
-                    title : 'Rasta',
+                    title : 'Café',
                     total: 0
                 },
                 {
                     id: LUPULUS_ID,
-                    title : 'Lupulus',
+                    title : 'Rauch Orange',
                     total: 0
                 },
                 {
                     id: VALDIEU_ID,
-                    title : 'Valdieu',
+                    title : 'So Chips Oignons caramélisés',
                     total: 0
                 },
                 {
                     id: STFEUILLIEN_ID,
-                    title : 'St_feuillien',
+                    title : 'So Chips Nature',
                     total: 0
                 },
                 {
                     id: RUBUS_ID,
-                    title : 'Rubus',
+                    title : 'So Chips Epices',
                     total: 0
                 },
             ],
@@ -69,7 +69,12 @@ class duelGKA24 extends React.Component {
     }
 
     loadDrinks(){
-        ajaxPost('payutc/public/drinks/sells', {'drinks' : this.state.drinks}).then(
+        const drinkNames = this.state.drinks.map(drink => drink.title);
+        const queryString = drinkNames.join(';');
+        console.log(queryString);
+        const url = `/get-sales/${encodeURIComponent(queryString)}`;
+        console.log(url)
+        ajaxGet(url).then(
             res => {
                 this.setState({
                     drinks : res.data.drinks
@@ -80,20 +85,15 @@ class duelGKA24 extends React.Component {
 
     render() {
         
-        /*const cuvee = this.state.drinks.find(x => x.id === CUVEE_ID).total;
+        const cuvee = this.state.drinks.find(x => x.id === CUVEE_ID).total;
         const rasta = this.state.drinks.find(x => x.id === RASTA_ID).total;
         const lupulus = this.state.drinks.find(x => x.id === LUPULUS_ID).total;
         const valdieu = this.state.drinks.find(x => x.id === VALDIEU_ID).total;
         const stfeuillien = this.state.drinks.find(x => x.id === STFEUILLIEN_ID).total;
         const rubus = this.state.drinks.find(x => x.id === RUBUS_ID).total;
-*/
 
-        const cuvee = 45
-        const rasta = 16
-        const lupulus = 8
-        const valdieu = 15
-        const stfeuillien = 37
-        const rubus = 13
+
+
 
         const PtsGnome = cuvee + rasta + lupulus
         const PtsKnight = valdieu + stfeuillien + rubus
