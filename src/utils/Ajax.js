@@ -13,7 +13,7 @@ function ajaxGet(path) {
     return axios.get(API_URL + path, defaultConfig);
 }
 function ajaxGet2(path) {
-    return axios.get(API_URL_2 + path, defaultConfig);
+    return axios.get(API_URL_2 + path);
 }
 
 function ajaxPost(path, data) {

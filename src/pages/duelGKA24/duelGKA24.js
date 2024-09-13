@@ -1,15 +1,9 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
-import {ajaxGet, ajaxGet2, ajaxPost} from '../../utils/Ajax';
+import {ajaxGet2} from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
 import './duelGKA24.css';
-
-const CUVEE_ID = 457;
-const RASTA_ID = 20383;
-const LUPULUS_ID = 20500;
-const VALDIEU_ID = 12492;
-const STFEUILLIEN_ID = 890;
-const RUBUS_ID = 20417;
+import {deDE} from "@material-ui/core/locale";
 
 const MAX_JAUGE_PX = 375;
 
@@ -17,46 +11,20 @@ const MAX_JAUGE_PX = 375;
 
 class duelGKA24 extends React.Component {
 
-
     constructor(props) {
         super(props);
 
         this.state = {
             drinks : [
-                {
-                    id: CUVEE_ID,
-                    title : 'Croissant',
-                    total: 0
-                },
-                {
-                    id: RASTA_ID,
-                    title : 'Café',
-                    total: 0
-                },
-                {
-                    id: LUPULUS_ID,
-                    title : 'Rauch Orange',
-                    total: 0
-                },
-                {
-                    id: VALDIEU_ID,
-                    title : 'So Chips Oignons caramélisés',
-                    total: 0
-                },
-                {
-                    id: STFEUILLIEN_ID,
-                    title : 'So Chips Nature',
-                    total: 0
-                },
-                {
-                    id: RUBUS_ID,
-                    title : 'So Chips Epices',
-                    total: 0
-                },
+                { title : 'Cuvée des Trolls PC', total: 0 },
+                { title : 'Kasteel Rubus PC', total: 0 },
+                { title : 'Angelus triple', total: 0 },
+                { title : 'Lupulus Triple PC', total: 0 },
+                { title : 'Val Dieu Triple PC', total: 0 },
+                { title : 'Rasta troll', total: 0 },
             ],
         }
     }
-
     componentDidUpdate(prevProps, prevState) {
         if (prevState.attackQueue !== this.attackQueue) {
             this.handleAttack();
@@ -66,6 +34,7 @@ class duelGKA24 extends React.Component {
     componentDidMount(){
         this.loadDrinks();
         setInterval(() => this.loadDrinks(), 15 * 1000);
+        // console.log(this.state.drinks);
     }
 
     loadDrinks(){
@@ -75,41 +44,47 @@ class duelGKA24 extends React.Component {
         const url = `/get-sales/${encodeURIComponent(queryString)}`;
         ajaxGet2(url).then(
             res => {
+                const reformattedDrinks = Object.keys(res.data).map(key => ({
+                    title: key,
+                    total: res.data[key]
+                }));
                 this.setState({
-                    drinks : res.data.drinks
+                    drinks : reformattedDrinks
                 });
             }
         )
     }
 
     render() {
-        
-        //const cuvee = this.state.drinks.find(x => x.id === CUVEE_ID).total;
-        //const rasta = this.state.drinks.find(x => x.id === RASTA_ID).total;
-        //const lupulus = this.state.drinks.find(x => x.id === LUPULUS_ID).total;
-        //const valdieu = this.state.drinks.find(x => x.id === VALDIEU_ID).total;
-        //const stfeuillien = this.state.drinks.find(x => x.id === STFEUILLIEN_ID).total;
-        //const rubus = this.state.drinks.find(x => x.id === RUBUS_ID).total;
+        const getTotal = (title) => {
+            let drink = null;
+            for (let i = 0; i < this.state.drinks.length; i++) {
+                const currentDrink = this.state.drinks[i];
+                if (currentDrink.title === title) {
+                    drink = currentDrink;
+                    break;
+                }
+            }
+            return drink ? drink.total : 0;
+        };
 
-        const cuvee = 12;
-        const rasta = 25;
-        const lupulus = 11;
-        const valdieu = 54;
-        const stfeuillien = 2;
-        const rubus = 4;
+        const cuvee = getTotal('Cuvée des Trolls PC');
+        const rasta = getTotal('Rasta troll');
+        const lupulus = getTotal('Lupulus Triple PC');
+        const valdieu = getTotal('Val Dieu Triple PC');
+        const stfeuillien = getTotal('Angelus triple');
+        const rubus = getTotal('Kasteel Rubus PC');
 
-        
+        const PtsGnome = cuvee + rasta + lupulus;
+        const PtsKnight = valdieu + stfeuillien + rubus;
 
-        const PtsGnome = cuvee + rasta + lupulus
-        const PtsKnight = valdieu + stfeuillien + rubus
-       
-        const max_biere = Math.max(cuvee, rasta, lupulus, valdieu, stfeuillien, rubus) 
-        
+        const max_biere = Math.max(cuvee, rasta, lupulus, valdieu, stfeuillien, rubus);
+
         return (
             <div className='body'>
                 <div className='cuvee'>
                     <div className='jauge' style={{width: (cuvee * MAX_JAUGE_PX / max_biere)}}>
-                        <p className='Nb_Gauche' >{cuvee}</p>
+                        <p className='Nb_Gauche'>{cuvee}</p>
                     </div>
                 </div>
                 <div className='rasta'>
@@ -134,7 +109,7 @@ class duelGKA24 extends React.Component {
                 </div>
                 <div className='rubus'>
                     <div className='jauge' style={{width: (rubus * MAX_JAUGE_PX / max_biere)}}>
-                        <p className='Nb_Droit' >{rubus}</p>
+                        <p className='Nb_Droit'>{rubus}</p>
                     </div>
                 </div>
                 <div className='PtsGnome'>
@@ -143,11 +118,10 @@ class duelGKA24 extends React.Component {
                 <div className='PtsKnight'>
                     <p>{PtsKnight}</p>
                 </div>
-                <img className="bg" src={asset_url("/images/fond_GKA24.png")}></img>
+                <img className="bg" src={asset_url("/images/fond_GKA24.png")} alt="background" />
             </div>
         )
     }
-
 }
 
-export default duelGKA24
+export default duelGKA24;
