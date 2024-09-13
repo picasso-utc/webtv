@@ -84,15 +84,21 @@ class duelGKA24 extends React.Component {
 
     render() {
         
-        const cuvee = this.state.drinks.find(x => x.id === CUVEE_ID).total;
-        const rasta = this.state.drinks.find(x => x.id === RASTA_ID).total;
-        const lupulus = this.state.drinks.find(x => x.id === LUPULUS_ID).total;
-        const valdieu = this.state.drinks.find(x => x.id === VALDIEU_ID).total;
-        const stfeuillien = this.state.drinks.find(x => x.id === STFEUILLIEN_ID).total;
-        const rubus = this.state.drinks.find(x => x.id === RUBUS_ID).total;
+        //const cuvee = this.state.drinks.find(x => x.id === CUVEE_ID).total;
+        //const rasta = this.state.drinks.find(x => x.id === RASTA_ID).total;
+        //const lupulus = this.state.drinks.find(x => x.id === LUPULUS_ID).total;
+        //const valdieu = this.state.drinks.find(x => x.id === VALDIEU_ID).total;
+        //const stfeuillien = this.state.drinks.find(x => x.id === STFEUILLIEN_ID).total;
+        //const rubus = this.state.drinks.find(x => x.id === RUBUS_ID).total;
 
+        const cuvee = 12;
+        const rasta = 25;
+        const lupulus = 11;
+        const valdieu = 54;
+        const stfeuillien = 2;
+        const rubus = 4;
 
-
+        
 
         const PtsGnome = cuvee + rasta + lupulus
         const PtsKnight = valdieu + stfeuillien + rubus
