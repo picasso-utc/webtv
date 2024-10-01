@@ -1,0 +1,34 @@
+.body {
+    position: relative;
+    width: 100%;
+}
+
+.bg {
+    width: 100%;
+    height: auto;
+}
+
+.bouteilles-list {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 130px;
+    height: 800px;
+    gap: 10px 30px;
+}
+
+.bouteille-item {
+    background-color: rgba(66, 51, 51, 0.95);
+    padding: 10px;
+    width: 400px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    font-family: "Courier New", Courier, "Georgia", serif;
+    font-size: 22px;
+}

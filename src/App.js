@@ -30,7 +30,7 @@ import PermHalloween from "./pages/permHalloween/PermHalloween";
 import Duelkasteel from "./pages/duelkasteel/duelkasteel";
 import DuelbrasseurP24 from "./pages/duelbrasseurP24/duelbrasseurP24";
 import duelGKA24 from "./pages/duelGKA24/duelGKA24";
-
+import beerMenu from "./pages/BeerMenu/BeerMenu";
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 class App extends React.Component {
@@ -65,6 +65,7 @@ class App extends React.Component {
             <Route path="/duelkasteel" exact component={Duelkasteel} />
             <Route path="/duelbrasseurP24" exact component={DuelbrasseurP24} />
             <Route path="/duelGKA24" exact component={duelGKA24} />
+            <Route path="/beerMenu" exact component={beerMenu} />
 
 
           </Switch>
