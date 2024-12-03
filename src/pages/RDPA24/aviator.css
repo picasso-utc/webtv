@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'Dalek';
+  src: url('../../../public/font/Sabo-Filled.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.aviator-body {
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  border: black solid 1px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Dalek';
+}
+
+
+.game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.game-container .running {
+  animation: background-scroll 10s linear infinite;
+  background-size: cover;
+}
+
+@keyframes background-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2000px 0;
+  }
+}
+
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.slot {
+  width: 300px;
+  height: 100px;
+  font-size: 70px;
+  background-color: white;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black; 
+}
+
+
+.button-raw {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: white;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #21a1f1;
+}
+
+.airplane {
+  width: 25rem;
+  height: auto;
+}
+
+
+.airplane.running {
+  animation: airplane-shake 0.2s infinite;
+}
+
+
+@keyframes airplane-shake {
+  0%, 100% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+
+.result {
+  margin-bottom: 5rem;
+  height: 60px;
+  font-size:60px;
+  z-index: 1;
+}
+
+
