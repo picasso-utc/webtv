@@ -7,7 +7,6 @@
 
 
 .aviator-body {
-  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
   border: black solid 1px;
   height: 100vh;
   width: 100vw;
@@ -18,25 +17,45 @@
 
 
 .game-container {
+  background: linear-gradient(180deg, #7cccfe  0%, #00347c 100%);
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   gap: 2rem;
+  background-size: 100% 500%;
 }
 
-.game-container .running {
-  animation: background-scroll 10s linear infinite;
-  background-size: cover;
+.game-container.running {
+  animation: background-move 7s linear forwards;
 }
 
-@keyframes background-scroll {
-  from {
-    background-position: 0 0;
+@keyframes background-move {
+  0% {
+    background-position: 0% 0%;
   }
-  to {
-    background-position: -2000px 0;
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 40rem;
+  background:#228B22;
+}
+
+.ground.running{
+  animation: ground-move 1s linear forwards; 
+}
+
+@keyframes ground-move {
+  100% {
+    height: 0;
   }
 }
 
@@ -87,16 +106,47 @@
   background-color: #21a1f1;
 }
 
+.airplane-container {
+  position: relative;
+}
+
 .airplane {
   width: 25rem;
   height: auto;
 }
 
-
-.airplane.running {
-  animation: airplane-shake 0.2s infinite;
+.smoke {
+  position: absolute;
+  top: 50%;
+  left: -2rem; 
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(128, 128, 128, 0.7) 0%, rgba(128, 128, 128, 0) 80%);
+  border-radius: 50%;
+  opacity: 0;
 }
 
+.smoke.running {
+  animation: smoke 0.5s linear infinite;
+}
+
+@keyframes smoke {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-50px) scale(3); 
+    opacity: 0;
+  }
+}
+
+.airplane-container.running {
+  animation: airplane-shake 0.1s infinite, airplane-rotate 5s ease-out forwards;
+}
 
 @keyframes airplane-shake {
   0%, 100% {
@@ -104,6 +154,15 @@
   }
   50% {
     transform: translateY(2px);
+  }
+}
+
+@keyframes airplane-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-30deg);
   }
 }
 

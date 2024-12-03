@@ -13,7 +13,7 @@ const Aviator = () => {
     const interval = setInterval(() => {
       setMultiplier((prev) => {
         const newMultiplier = prev + 0.1;
-        if (Math.random() < 0.01 * newMultiplier) {
+        if (Math.random() < 0.01   * newMultiplier) {
           clearInterval(interval);
           setRunning(false);
           setResult("Crash ! Vous avez perdu !");
@@ -39,6 +39,7 @@ const Aviator = () => {
   return (
     <div className="aviator-body">
       <div className={`game-container ${running ? "running" : ""}`}>
+        <div className={`ground ${running ? "running" : ""}`}/>
         <div className="panel">
           <div className="slot">
             x{multiplier.toFixed(2)}
@@ -52,7 +53,10 @@ const Aviator = () => {
           </button>
         </div>
         </div>
-        <img src={asset_url("/images/rdpA24/teddy_plane.png")} className={`airplane ${running ? "running" : ""}`} />
+        <div className={`airplane-container ${running ? "running" : ""}`}>
+          <img src={asset_url("/images/rdpA24/teddy_plane.png")} className={`airplane ${running ? "running" : ""}`}/>
+          <div className={`smoke ${running ? "running" : ""}`}></div>
+        </div>
         <div className="result">{result}</div>
       </div>
     </div>
