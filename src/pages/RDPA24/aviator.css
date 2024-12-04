@@ -5,6 +5,15 @@
   font-style: normal;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 .aviator-body {
   border: black solid 1px;
@@ -40,12 +49,45 @@
   }
 }
 
+
+.mise {
+  position: absolute;
+  top: 3vh;
+  left: 2vw;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  gap: 1rem;
+}
+
+.mise .miseinput {
+  height: 50px;
+  font-size: 40px;
+  background-color: #a3d3f057;
+  border: 2px solid #0b95eab0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black; 
+  font-family: 'Dalek';
+  text-align: center;
+}
+
+
+.setting-button .button:hover {
+  background: #f3f3f3;
+}
+
+
 .ground {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%; 
-  height: 40rem;
+  height: 50%;
   background:#228B22;
 }
 
