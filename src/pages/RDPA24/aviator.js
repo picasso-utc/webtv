@@ -64,7 +64,7 @@ const Aviator = () => {
     } else {
       setRunning(false);
       setResult(`Vous avez encaissé à x${score.toFixed(0)} !`);
-      setMise(cashoutValue);
+      setMise(mise * score.toFixed(0));
     }
   };
 
