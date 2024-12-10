@@ -49,19 +49,20 @@ input[type="number"] {
   }
 }
 
-.mise {
+.left-panel {
   position: absolute;
   top: 3vh;
   left: 2vw;
-  width: 15rem;
+  width: max-content;
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 2rem;
   gap: 1rem;
 }
 
-.mise .miseinput {
+.left-panel .miseinput {
   height: 50px;
+  width: 15rem;
   font-size: 40px;
   background-color: #a3d3f057;
   border: 2px solid #0b95eab0;
@@ -101,7 +102,7 @@ input[type="number"] {
 }
 
 
-.panel {
+.middle-panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,7 +111,7 @@ input[type="number"] {
 }
 
 
-.slot {
+.score-display {
   width: 300px;
   height: 100px;
   font-size: 70px;
@@ -176,34 +177,6 @@ input[type="number"] {
   height: auto;
 }
 
-.smoke {
-  position: absolute;
-  top: 50%;
-  left: -2rem; 
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, rgba(128, 128, 128, 0.7) 0%, rgba(128, 128, 128, 0) 80%);
-  border-radius: 50%;
-  opacity: 0;
-}
-
-.smoke.running {
-  animation: smoke 0.5s linear infinite;
-}
-
-@keyframes smoke {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-50px) scale(3); 
-    opacity: 0;
-  }
-}
 
 .airplane-container.running {
   animation: airplane-rotate 3s ease-out forwards;
@@ -226,7 +199,8 @@ input[type="number"] {
   z-index: 1;
 }
 
-.player-panel {
+
+.right-panel {
   position: absolute;
   top: 3vh;
   right: 2vw;
