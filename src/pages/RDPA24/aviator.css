@@ -36,19 +36,31 @@ input[type="number"] {
   background-size: 100% 500%;
 }
 
-.game-container.running {
+.game-container.running.up {
+  animation: background-up 7s linear forwards;
+}
+
+.game-container.running.down {
   animation: background-move 7s linear forwards;
 }
 
-@keyframes background-move {
-  0% {
-    background-position: 0% 0%;
+@keyframes background-up {
+  from {
+    background-position: var(--current-position, 0% 0%);
   }
-  100% {
+  to {
     background-position: 100% 100%;
   }
 }
 
+@keyframes background-down {
+  from {
+    background-position: var(--current-position, 0% 0%);
+  }
+  to {
+    background-position: 0% 0%;
+  }
+}
 
 .mise {
   position: absolute;

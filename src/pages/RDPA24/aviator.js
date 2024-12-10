@@ -5,15 +5,40 @@ import { asset_url } from '../../utils/Config';
 const Aviator = () => {
   // Définition des hooks
   const [score, setScore] = useState(1.0);        // Initalisation du score à 1
+  const [scoreDirection, setScoreDirection] = useState(1);  // Direction initiale du score croissant
   const [mise, setMise] = useState(0);            // Mise de départ à 0
   const [ranking, setRanking] = useState([]);     // Classement de départ vide
   const [running, setRunning] = useState(false);  // Le jeu attend d'être lancé
   const [result, setResult] = useState("");       // Variable de résultat
 
   // Définition des variables du modèle statistique
-  let increament_step = 0.1;
-  const proba_rate = 0.01;
-  const timestep = 200;
+  let increament_step_value = 0.5;
+  const step_proba_rate = 0.01;
+  const timestep = 250;
+  const score_direction_proba_rate = 0.001;
+
+  // Définition de l'effet de variation de la croissance du score
+  useEffect(() => {
+    if (!running) return;
+  
+    const score_direction_interval = setInterval(() => {
+      setScoreDirection((prev) => {
+        if (score >= 2) {
+          if ((prev > 0 && Math.random() < score_direction_proba_rate) || (Math.random() < score_direction_proba_rate + 0.3)) {
+            return -prev
+          }
+          return prev
+        }
+        return 1; // Si score < 2, on laisse croissant
+      });
+    }, 100);
+  
+    return () => clearInterval(score_direction_interval);
+  }, [running, score]);
+  
+  
+  
+
 
   // Définition de l'effet de variation du score
   useEffect(() => {
@@ -21,19 +46,19 @@ const Aviator = () => {
 
     const interval = setInterval(() => {
       setScore((prev) => {
-        const newMultiplier = prev + increament_step;
-        if (Math.random() < proba_rate * newMultiplier) {
+        const newScore = prev + scoreDirection * increament_step_value;
+        if (Math.random() < step_proba_rate * newScore) {
           clearInterval(interval);
           setRunning(false);
           setMise(0);
           setResult("Crash ! Vous avez perdu !");
         }
-        return newMultiplier;
+        return newScore;
       });
     }, timestep);
 
     return () => clearInterval(interval);
-  }, [running]);
+  }, [running, scoreDirection]);
 
   
   // Récupération du gain 
@@ -56,13 +81,14 @@ const Aviator = () => {
     setScore(1.0);
     setResult("");
     setRunning(true);
+    setScoreDirection(1);
   };
 
 
   // Render
   return (
     <div className="aviator-body">
-      <div className={`game-container ${running ? "running" : ""}`}>
+      <div className={`game-container ${running ? "running" : ""} ${scoreDirection>0 ? "up" : ""} ${scoreDirection<0 ? "down" : ""}`}>
         <div className="mise">
           Mise actuelle
           <input
@@ -79,7 +105,7 @@ const Aviator = () => {
         <div className={`ground ${running ? "running" : ""}`}/>
         <div className="panel">
           <div className="slot">
-            x{score.toFixed(0)}
+            {score.toFixed(0)}
           </div>
           <div className="button-raw">
           {
@@ -93,7 +119,7 @@ const Aviator = () => {
           }
         </div>
         </div>
-        <div className={`airplane-container ${running ? "running" : ""}`}>
+        <div className={`airplane-container ${running ? "running" : ""} ${scoreDirection>0 ? "up" : ""} ${scoreDirection<0 ? "down" : ""}`}>
           <img src={asset_url("/images/rdpA24/teddy_plane.png")} className={`airplane ${running ? "running" : ""}`}/>
           <div className={`smoke ${running ? "running" : ""}`}></div>
         </div>
