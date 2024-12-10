@@ -13,10 +13,10 @@ const Aviator = () => {
   const [cashoutScores, setCashoutScores] = useState([]);    // Liste des scores encaissés en mode multijoueur
 
   // Définition des variables du modèle statistique
-  let increament_step_value = Math.random() + 0.1;
-  const step_proba_rate = 0.025 * Math.random();
-  const timestep = 250;
-  const score_direction_proba_rate = 0.001;
+  let increament_step_value = Math.random() + 0.1;  // Seuil de base à 0.1 pour éviter une incrémentation nulle
+  const step_proba_rate = 0.025 * Math.random();    // Création d'un coeff de loi de probabilité
+  const timestep = 250;                             // Timestep constant
+  const score_direction_proba_rate = 0.001;         // Loi de probabilité de changement de croissance constante
 
   // Définition de l'effet de variation de la croissance du score
   useEffect(() => {
@@ -24,15 +24,15 @@ const Aviator = () => {
 
     const score_direction_interval = setInterval(() => {
       setScoreDirection((prev) => {
-        if (score >= 2) {
-          if ((prev > 0 && Math.random() < score_direction_proba_rate) || (Math.random() < score_direction_proba_rate + 0.3)) {
+        if (score >= 2) {     // On ne change pas la croissance avant l'arrivée à 2 et on ne repasse pas en dessous
+          if ((prev > 0 && Math.random() < score_direction_proba_rate) || (Math.random() < score_direction_proba_rate + 0.3)) {  // La probabilité conditionnelle change en fonction de l'état précédent pour ajouter de la cohérence
             return -prev;
           }
           return prev;
         }
-        return 1; // Si score < 2, on laisse croissant
+        return 1; // Si score est inférieur 2, la croissance est positive
       });
-    }, 100);
+    }, 100);    // Actualisation toutes les 100 ms
 
     return () => clearInterval(score_direction_interval);
   }, [running, score]);
@@ -43,11 +43,9 @@ const Aviator = () => {
 
     const interval = setInterval(() => {
       setScore((prev) => {
-        const newScore = prev + scoreDirection * increament_step_value;
-        if (Math.random() < step_proba_rate * newScore) {
-          clearInterval(interval);
-          setRunning(false);
-          setMise(0);
+        const newScore = prev + scoreDirection * increament_step_value;   // Création du nouveau score
+        if (Math.random() < step_proba_rate * newScore) {    // Test aléatoire de crash
+          endGame();
           setResult("Crash ! Vous avez perdu !");
         }
         return newScore;
@@ -59,16 +57,16 @@ const Aviator = () => {
 
   // Récupération du gain
   const handleCashout = () => {
-    if (multiplayer) {
+    if (multiplayer) {    // Si mode multijoueur, actualisation de la liste des score encaissés
       setCashoutScores((prev) => [...prev, score.toFixed(0)]);
-    } else {
+    } else {    // Sinon, encaissement et actualisation de la mise
       setRunning(false);
       setResult(`Vous avez encaissé à x${score.toFixed(0)} !`);
       setMise(mise * score.toFixed(0));
     }
   };
 
-  // Gestion de la mise
+  // Mise à jour de la mise
   const handleSetMise = (userMise) => {
     if (!isNaN(userMise) && userMise > 0) {
       setMise(userMise);
