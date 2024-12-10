@@ -7,13 +7,14 @@ const Aviator = () => {
   const [score, setScore] = useState(1.0);        // Initalisation du score à 1
   const [scoreDirection, setScoreDirection] = useState(1);  // Direction initiale du score croissant
   const [mise, setMise] = useState(0);            // Mise de départ à 0
-  const [ranking, setRanking] = useState([]);     // Classement de départ vide
   const [running, setRunning] = useState(false);  // Le jeu attend d'être lancé
   const [result, setResult] = useState("");       // Variable de résultat
+  const [multiplayer, setMultiplayer] = useState(false);     // Booléan de solo/multiplayer
+
 
   // Définition des variables du modèle statistique
-  let increament_step_value = 0.5;
-  const step_proba_rate = 0.01;
+  let increament_step_value = Math.random() + 0.1;
+  const step_proba_rate = 0.05;
   const timestep = 250;
   const score_direction_proba_rate = 0.001;
 
@@ -89,7 +90,15 @@ const Aviator = () => {
   return (
     <div className="aviator-body">
       <div className={`game-container ${running ? "running" : ""} ${scoreDirection>0 ? "up" : ""} ${scoreDirection<0 ? "down" : ""}`}>
-        <div className="mise">
+        <div class="player-panel">
+          Multiplayer
+          <label class="switch">
+            <input class="toggle" type="checkbox" checked={multiplayer} onChange={() => setMultiplayer(!multiplayer)}></input>
+            <span class="slider"></span>
+            <span class="card-side"></span>
+          </label>
+        </div>
+        {!multiplayer && <div className="mise">
           Mise actuelle
           <input
             className="miseinput"
@@ -101,22 +110,16 @@ const Aviator = () => {
             }}
             onWheel={(e) => e.preventDefault()}
           />
-        </div>
+        </div>}
         <div className={`ground ${running ? "running" : ""}`}/>
         <div className="panel">
           <div className="slot">
             {score.toFixed(0)}
           </div>
           <div className="button-raw">
-          {
-            running && <button className="button" onClick={handleCashout}>
-              Encaisser
-            </button>}
-          {
-            !running && <button className="button" onClick={startGame}>
-              Jouer
-            </button>
-          }
+          <button className="button" onClick={running ? handleCashout : startGame}>
+            {running ? "Encaisser" : "Jouer"}
+          </button>
         </div>
         </div>
         <div className={`airplane-container ${running ? "running" : ""} ${scoreDirection>0 ? "up" : ""} ${scoreDirection<0 ? "down" : ""}`}>
