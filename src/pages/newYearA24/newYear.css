@@ -1,0 +1,151 @@
+@font-face {
+  font-family: 'Dalek';
+  src: url('../../../public/font/Sabo-Filled.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+.newyear-body {
+  border: black solid 1px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Dalek';
+  scrollbar-width: none; 
+}
+
+
+.newyear-body .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
+}
+
+.explosion {
+  width: 100vw;
+  z-index: 100;
+}
+
+
+.dancer {
+  position: fixed;
+  height: auto;
+}
+
+.dancer1 {
+  z-index: 5;
+  bottom: 10%;
+  left: 60%;
+  width: 200px; 
+}
+
+.dancer2 {
+  width: 200px; 
+  bottom: 20%;
+  left: 30%;
+  z-index: 2;
+}
+
+.dancer3 {
+  bottom: 25%;
+  left: 38%;
+  width: 150px; 
+  z-index: 1;
+}
+
+.dancer4 {
+  bottom: 2%;
+  left: 47%;
+  width: 160px; 
+  z-index: 4;
+}
+
+.dancer5 {
+  bottom: 2%;
+  right: 20%;
+  width: 200px;
+  z-index: 6;
+}
+
+.dancer6 {
+  bottom: 30%;
+  left: 50%;
+  width: 190px; 
+}
+
+.dancer7 {
+  bottom: 3%;
+  right: 55%;
+  width: 250px; 
+  z-index: 5;
+}
+
+.dancer8 {
+  bottom: 20%;
+  left: 40%;
+  z-index: 2;
+  width: 170px;
+}
+
+.dancer9 {
+  bottom: 15%;
+  left: 52%;
+  width: 150px;
+  z-index: 2;
+}
+
+.dancer10 {
+  z-index: 1;
+  bottom: 22%;
+  left: 57%;
+  width: 150px;
+}
+
+.dancer11 {
+  z-index: 5;
+  bottom: 2%;
+  left: 55%;
+  width: 180px;
+}
+
+.dancer12 {
+  z-index: 5;
+  bottom: 2%;
+  left: 22%;
+  width: 200px;
+}
+
+.countdown {
+  z-index: 100000;
+  position: fixed;
+  top: 30%;
+  width: fit-content;
+  font-size: 9rem;
+  padding-left: 50px;
+  color: white;
+}
+
+.countdown .finished {
+  font-size: 5rem; 
+}
