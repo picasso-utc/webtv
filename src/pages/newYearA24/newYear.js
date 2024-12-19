@@ -30,7 +30,7 @@ const NewYearA24 = () => {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      const todayAt22h = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 31, 10); // Aujourd'hui à 22h
+      const todayAt22h = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0, 0); // Aujourd'hui à 22h
 
       const difference = todayAt22h - now;
 
