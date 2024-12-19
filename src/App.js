@@ -71,7 +71,7 @@ class App extends React.Component {
             <Route path="/duelGKA24" exact component={duelGKA24} />
             <Route path="/beerMenu" exact component={beerMenu} />
             <Route path="/rdpA24" exact component={Aviator} />
-            <Route path="/newYearA24" exact component={NewYearA24} />
+            <Route path="/newYear" exact component={NewYearA24} />
           </Switch>
         </BrowserRouter>
     );
