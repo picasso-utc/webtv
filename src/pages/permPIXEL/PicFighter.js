@@ -1,10 +1,62 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { Box, styled } from '@mui/material';
 import { ajaxPost } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
-import Grid from '@material-ui/core/Grid';
-import { Typography, Box } from '@material-ui/core';
 import './PicFighter.css';
+
+const StyledRoot = styled('div')({
+  height: '100vh',
+      width: '100vw',
+      backgroundImage: 'url(./images/background.jpg)',
+      backgroundColor: 'black',
+      backgroundPosition: 'center',
+      backgroundSize: 'contain',
+      backgroundOpacity: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative'
+});
+
+const StyledOverlay = styled('div')({
+  position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      zIndex: 1
+});
+
+const StyledVideo = styled('div')({
+  position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '90%',
+        height: '90%',
+        objectFit: 'cover'
+});
+
+const StyledText = styled('div')({
+  color: '#fff',
+      zIndex: 2
+});
+
+const StyledRectangleLeft = styled('div')({
+  position: 'absolute',
+        left: '127px',
+        top: '60px',
+        height: '38px',
+        background: '#01FF36'
+});
+
+const StyledRectangleRight = styled('div')({
+  position: 'absolute',
+        right: '127px',
+        top: '60px',
+        height: '38px',
+        background: '#01FF36'
+});
 
 
 class PicFighter extends React.Component {
@@ -164,13 +216,13 @@ class PicFighter extends React.Component {
     }
 
 	render() {
-        const { classes } = this.props;
+        const {} = this.props;
         const { drinks, attackQueue } = this.state;
         const listItems = attackQueue.map((d) => <li>{d.team}</li>);
         const animationUrl = this.state.animationUrl
 
 		return (
-            <Box className={classes.root}>
+            <Box component={StyledRoot}>
                     <div className="HUD">
                         <img src = {asset_url("/images/HUD.png")}></img>
                         <div className={`hp-rectangle ${classes.rectangleLeft}`} style={{ width: this.state.rightHealth }}></div>
@@ -252,56 +304,5 @@ class PicFighter extends React.Component {
 	}
 }
 
-const styles = theme => ({
-    root: {
-      height: '100vh',
-      width: '100vw',
-      backgroundImage: 'url(./images/background.jpg)',
-      backgroundColor: 'black',
-      backgroundPosition: 'center',
-      backgroundSize: 'contain',
-      backgroundOpacity: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    },
-    overlay: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      zIndex: 1,
-    },
-    video: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '90%',
-        height: '90%',
-        objectFit: 'cover',
-      },
-    text: {
-      color: '#fff',
-      zIndex: 2,    
-    },
-    rectangleLeft :{
-        position: 'absolute',
-        left: '127px',
-        top: '60px',
-        height: '38px',
-        background: '#01FF36',
-    },
-    rectangleRight :{
-        position: 'absolute',
-        right: '127px',
-        top: '60px',
-        height: '38px',
-        background: '#01FF36',
-    }
-  });
-
-export default withStyles (styles) (PicFighter)
+export default PicFighter
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Grid from "@material-ui/core/Grid";
+import {Grid} from "@mui/material";
 import {ajaxGet} from "../../utils/Ajax";
 import './eloRanking.css'
 import RankingItem from "../../components/eloRanking/RankingItem";

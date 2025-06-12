@@ -1,8 +1,8 @@
 import React from 'react';
 import { URL, API_URL } from '../../utils/Config';
 import { ajaxGet } from '../../utils/Ajax';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import {Typography} from '@mui/material';
+import {Grid} from '@mui/material';
 
 
 class TVContent extends React.Component {

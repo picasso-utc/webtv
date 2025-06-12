@@ -1,9 +1,7 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core';
 import {ajaxGet2, ajaxGet} from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
 import './BeerMenu.css';
-import {deDE} from "@material-ui/core/locale";
 
 const MAX_JAUGE_PX = 375;
 

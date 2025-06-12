@@ -1,9 +1,7 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core';
 import {ajaxGet2} from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
 import './duelGKA24.css';
-import {deDE} from "@material-ui/core/locale";
 
 const MAX_JAUGE_PX = 375;
 

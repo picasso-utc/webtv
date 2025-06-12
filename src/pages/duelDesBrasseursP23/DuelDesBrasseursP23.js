@@ -1,10 +1,63 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { Box } from '@mui/material';
+import { styled } from '@mui/material';
 import { ajaxPost } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
-import Grid from '@material-ui/core/Grid';
-import { Typography, Box } from '@material-ui/core';
 import './DuelDesBrasseursP23.css';
+
+const StyledRoot = styled('div')({
+  height: '100vh',
+      width: '100vw',
+      backgroundImage: 'url(./images/backgroundDuel.gif)',
+      backgroundColor: 'black',
+      backgroundPosition: 'center',
+      backgroundSize: 'contain',
+      backgroundOpacity: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative'
+});
+
+const StyledOverlay = styled('div')({
+  position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      zIndex: 1
+});
+
+const StyledVideo = styled('div')({
+  position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '90%',
+        height: '90%',
+        objectFit: 'cover'
+});
+
+const StyledText = styled('div')({
+  color: '#fff',
+      zIndex: 2
+});
+
+const StyledRectangleLeft = styled('div')({
+  position: 'absolute',
+        left: '127px',
+        top: '60px',
+        height: '38px',
+        background: '#01FF36'
+});
+
+const StyledRectangleRight = styled('div')({
+  position: 'absolute',
+        right: '127px',
+        top: '60px',
+        height: '38px',
+        background: '#01FF36'
+});
 
 
 class DuelDesBrasseursP23 extends React.Component {
@@ -164,15 +217,15 @@ class DuelDesBrasseursP23 extends React.Component {
     }
 
 	render() {
-        const { classes } = this.props;
+        const {} = this.props;
         const { drinks, attackQueue } = this.state;
         const listItems = attackQueue.map((d) => <li>{d.team}</li>);
         const animationUrl = this.state.animationUrl
 
 		return (
-            <Box className={classes.root}>
+            <Box component={StyledRoot}>
                     <div className="HUD">
-                        <img src = {asset_url("/images/duelDesBrasseursP23/HUD.png")} class="hud"></img>
+                        <img src = {asset_url("/images/duelDesBrasseursP23/HUD.png")} className="hud"></img>
                         <div className={`hp-rectangle ${classes.rectangleLeft}`} style={{ width: this.state.rightHealth }}></div>
                         <div className={`hp-rectangle ${classes.rectangleRight}`} style={{ width: this.state.leftHealth }}></div>
                     </div>
@@ -184,10 +237,10 @@ class DuelDesBrasseursP23 extends React.Component {
                     </div>
                     <br></br>
                     <div className="left">
-                        <p class="scoreText">{drinks.filter(e => e.team === 'left').map(e => e.total).reduce((a,b) => a + b)}x</p>
+                        <p className="scoreText">{drinks.filter(e => e.team === 'left').map(e => e.total).reduce((a,b) => a + b)}x</p>
                     </div>
                     <div className="right">
-                        <p class="scoreText">x{drinks.filter(e => e.team === 'right').map(e => e.total).reduce((a,b) => a + b)}</p>
+                        <p className="scoreText">x{drinks.filter(e => e.team === 'right').map(e => e.total).reduce((a,b) => a + b)}</p>
                     </div>
                 </Box>
                 
@@ -195,56 +248,5 @@ class DuelDesBrasseursP23 extends React.Component {
 	}
 }
 
-const styles = theme => ({
-    root: {
-      height: '100vh',
-      width: '100vw',
-      backgroundImage: 'url(./images/backgroundDuel.gif)',
-      backgroundColor: 'black',
-      backgroundPosition: 'center',
-      backgroundSize: 'contain',
-      backgroundOpacity: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    },
-    overlay: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      zIndex: 1,
-    },
-    video: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '90%',
-        height: '90%',
-        objectFit: 'cover',
-      },
-    text: {
-      color: '#fff',
-      zIndex: 2,    
-    },
-    rectangleLeft :{
-        position: 'absolute',
-        left: '127px',
-        top: '60px',
-        height: '38px',
-        background: '#01FF36',
-    },
-    rectangleRight :{
-        position: 'absolute',
-        right: '127px',
-        top: '60px',
-        height: '38px',
-        background: '#01FF36',
-    }
-  });
-
-export default withStyles (styles) (DuelDesBrasseursP23)
+export default DuelDesBrasseursP23
 

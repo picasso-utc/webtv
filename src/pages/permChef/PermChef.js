@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ajaxPost } from "../../utils/Ajax";
-import Grid from "@material-ui/core/Grid";
+import { Grid } from "@mui/material";
 import ClanBar from "../../components/permChef/ClanBar";
 import logoHarpona from "../../assets/permChef/harpona.png";
 import logoOrphies from "../../assets/permChef/orphies.png";

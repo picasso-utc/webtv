@@ -1,8 +1,107 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import {Grid } from '@mui/material';
+import { styled } from '@mui/material';
 import { ajaxPost } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
-import Grid from '@material-ui/core/Grid';
+
+const StyledBody = styled('div')({
+  fontWeight: 500
+});
+
+const StyledMain = styled('div')({
+  height: '100vh', 
+        backgroundColor: '#000223', 
+        color: 'white', 
+        padding: '2% 1%',
+        fontWeight: 600
+});
+
+const StyledPic = styled('div')({
+  height: '100%', 
+        border: '2px solid #B22132'
+});
+
+const StyledDuel_img = styled('div')({
+  objectFit: 'contain', 
+        height: '100%',
+        width: '100%'
+});
+
+const StyledImg_div_left = styled('div')({
+  height: '100%', 
+        paddingRight: 0,
+        textAlign: 'right',
+        paddingTop: 15
+});
+
+const StyledImg_div_right = styled('div')({
+  height: '100%', 
+        paddingRight: 0,
+        textAlign: 'left',
+        paddingTop: 15
+});
+
+const StyledBeer_img = styled('div')({
+  objectFit: 'contain', 
+        height: '80%',
+        borderRadius: 5
+});
+
+const StyledBeer_name = styled('div')({
+  height: '20%',
+        fontSize: 35,
+        display: 'block',
+        marginTop: -5
+});
+
+const StyledLeft = styled('div')({
+  textAlign: 'right'
+});
+
+const StyledRight = styled('div')({
+  textAlign: 'left'
+});
+
+const StyledDiv_score = styled('div')({
+  height: '100%',
+        position: 'relative'
+});
+
+const StyledLeft_score_img = styled('div')({
+  borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+        width: '100%',
+        height: '75%',
+        objectFit: 'cover'
+});
+
+const StyledRight_score_img = styled('div')({
+  borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
+        width: '100%',
+        height: '75%',
+        objectFit: 'cover'
+});
+
+const StyledLeft_score = styled('div')({
+  right: 10,
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+        top: '35%',
+        height: '30%',
+        width: '80%',
+        position: 'absolute'
+});
+
+const StyledRight_score = styled('div')({
+  left: 10,
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
+        top: '35%',
+        height: '30%',
+        width: '80%',
+        position: 'absolute'
+});
 
 
 class PermPic extends React.Component {
@@ -100,18 +199,18 @@ class PermPic extends React.Component {
 
 	render() {
 
-        const { classes } = this.props;
+        const {} = this.props;
         const { duel } = this.state;
 
 		return (
             
-            <div className={classes.main}>
+            <div component={StyledMain}>
                 
-                <div className={classes.pic}>
+                <div component={StyledPic}>
                     <Grid container direction="row" style={{height: '3%'}}>
                     </Grid>
                     <Grid container direction="row" style={{height: '30%'}}>
-                        <img src={asset_url("/images/duel_basse_cour.png")} className={classes.duel_img} alt="Duel des brasseurs"/>
+                        <img src={asset_url("/images/duel_basse_cour.png")} component={StyledDuel_img} alt="Duel des brasseurs"/>
                     </Grid>
 
                     <Grid container direction="row" style={{height: '11%'}}>
@@ -121,23 +220,23 @@ class PermPic extends React.Component {
 
                     {/* DUEL */}
                     <Grid container direction="row" style={{height: '30%'}}>
-                        <Grid item xs={3} className={classes.img_div_left}>
-                            <img alt="delired_beer" src={asset_url("/images/team_vollaile.png")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Volaille ({duel.score_1})<br/>Cuvée, Cidre, Val Dieu</span>
+                        <Grid item xs={3} component={StyledImg_div_left}>
+                            <img alt="delired_beer" src={asset_url("/images/team_vollaile.png")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Volaille ({duel.score_1})<br/>Cuvée, Cidre, Val Dieu</span>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.left_score} id="vollaile">
-                                <img alt="delired_score" src={asset_url("/images/beer.gif")} className={classes.left_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledLeft_score} id="vollaile">
+                                <img alt="delired_score" src={asset_url("/images/beer.gif")} component={StyledLeft_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.right_score} id="cochons">
-                                <img alt="pechemel_score" src={asset_url("/images/beer.gif")} className={classes.right_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledRight_score} id="cochons">
+                                <img alt="pechemel_score" src={asset_url("/images/beer.gif")} component={StyledRight_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.img_div_right}>
-                            <img alt="pechemel_beer" src={asset_url("/images/team_cochons.png")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Cochons ({duel.score_2})<br/>Délirium, Gauloise, Barbar</span>
+                        <Grid item xs={3} component={StyledImg_div_right}>
+                            <img alt="pechemel_beer" src={asset_url("/images/team_cochons.png")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Cochons ({duel.score_2})<br/>Délirium, Gauloise, Barbar</span>
                         </Grid>
                     </Grid>
 
@@ -156,92 +255,5 @@ class PermPic extends React.Component {
 	}
 }
 
-const styles = theme => ({
-    body: {
-        fontWeight: 500,
-    },
-    main: {
-        height: '100vh', 
-        backgroundColor: '#000223', 
-        color: 'white', 
-        padding: '2% 1%',
-        fontWeight: 600,
-    },       
-    pic : {
-        height: '100%', 
-        border: '2px solid #B22132'
-    },    
-    duel_img : {
-        objectFit: 'contain', 
-        height: '100%',
-        width: '100%',
-    },  
-    img_div_left : {
-        height: '100%', 
-        paddingRight: 0,
-        textAlign: 'right',
-        paddingTop: 15,
-    },
-    img_div_right : {
-        height: '100%', 
-        paddingRight: 0,
-        textAlign: 'left',
-        paddingTop: 15,
-    },
-    beer_img : {
-        objectFit: 'contain', 
-        height: '80%',
-        borderRadius: 5,
-    },    
-    beer_name : {
-        height: '20%',
-        fontSize: 35,
-        display: 'block',
-        marginTop: -5,
-    },
-    left : {
-        textAlign: 'right',
-    },    
-    right : {
-        textAlign: 'left',
-    },
-    div_score : {
-        height: '100%',
-        position: 'relative',
-    },  
-    left_score_img : {
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
-        width: '100%',
-        height: '75%',
-        objectFit: 'cover',
-    },    
-    right_score_img : {
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10,
-        width: '100%',
-        height: '75%',
-        objectFit: 'cover',
-    },    
-    left_score : {
-        right: 10,
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
-        top: '35%',
-        height: '30%',
-        width: '80%',
-        position: 'absolute',
-    },    
-    right_score : {
-        left: 10,
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10,
-        top: '35%',
-        height: '30%',
-        width: '80%',
-        position: 'absolute',
-    },    
-});
-
-export default withStyles (styles) (PermPic)
+export default PermPic
 

@@ -1,8 +1,117 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import { Grid } from '@mui/material';
+import { styled } from '@mui/material';
 import { ajaxPost } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
-import Grid from '@material-ui/core/Grid';
+
+const StyledBody = styled('div')({
+  fontWeight: 500
+});
+
+const StyledMain = styled('div')({
+  height: '100vh', 
+        backgroundColor: '#000223', 
+        color: 'white', 
+        padding: '2% 1%',
+        fontWeight: 600,
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '5% 50%',
+        backgroundSize: '10%'
+});
+
+const StyledPic = styled('div')({
+  backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '95% 50%',
+        backgroundSize: '10%',
+        height: '100%', 
+        border: '1.5px solid #B22132'
+});
+
+const StyledDuel_img = styled('div')({
+  objectFit: 'contain', 
+        height: '100%',
+        width: '100%'
+});
+
+const StyledImg_div_left = styled('div')({
+  height: '100%', 
+        paddingRight: 0,
+        textAlign: 'right',
+        paddingTop: 15
+});
+
+const StyledImg_div_right = styled('div')({
+  height: '100%', 
+        paddingRight: 0,
+        textAlign: 'left',
+        paddingTop: 15
+});
+
+const StyledBeer_img = styled('div')({
+  objectFit: 'contain', 
+        height: '80%',
+        borderRadius: 5
+});
+
+const StyledBeer_name = styled('div')({
+  height: '20%',
+        fontSize: 20,
+        display: 'block',
+        marginTop: -5
+});
+
+const StyledLeft = styled('div')({
+  textAlign: 'right'
+});
+
+const StyledRight = styled('div')({
+  textAlign: 'left'
+});
+
+const StyledDiv_score = styled('div')({
+  height: '100%',
+        position: 'relative'
+});
+
+const StyledLeft_score_img = styled('div')({
+  borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover'
+});
+
+const StyledRight_score_img = styled('div')({
+  borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover'
+});
+
+const StyledLeft_score = styled('div')({
+  right: 10,
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+        top: '35%',
+        height: '30%',
+        width: '80%',
+        position: 'absolute',
+        backgroundColor: '#B22132'
+});
+
+const StyledRight_score = styled('div')({
+  left: 10,
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
+        top: '35%',
+        height: '30%',
+        width: '80%',
+        position: 'absolute',
+        backgroundColor: '#B22132'
+});
 
 
 class TVDuelBrasseur2 extends React.Component {
@@ -94,7 +203,7 @@ class TVDuelBrasseur2 extends React.Component {
 
 	render() {
 
-        const { classes } = this.props;
+        const {} = this.props;
         const { beers } = this.state;
         const backgroundImage = {
             backgroundImage: 'url(\'' + asset_url('/images/background_logo.png') + '\')'
@@ -102,104 +211,104 @@ class TVDuelBrasseur2 extends React.Component {
 
 		return (
             
-            <div className={classes.main} style={backgroundImage}>
+            <div component={StyledMain} style={backgroundImage}>
                 
-                <div style={backgroundImage} className={classes.pic}>
+                <div style={backgroundImage} component={StyledPic}>
                     <Grid container direction="row" style={{height: '3%'}}>
                     </Grid>
                     <Grid container direction="row" style={{height: '12%'}}>
-                        <img src={asset_url("/images/duel_fredo.png")} className={classes.duel_img} alt="Duel des brasseurs"/>
+                        <img src={asset_url("/images/duel_fredo.png")} component={StyledDuel_img} alt="Duel des brasseurs"/>
                     </Grid>
 
 
                     {/* DUEL 1 */}
                     <Grid container direction="row" style={{height: '20%'}}>
-                        <Grid item xs={3} className={classes.img_div_left} id="deli">
-                            <img alt="deli_beer" src={asset_url("/images/delirium.jpg")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Délirium ({beers.duel_1.delirium.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_left} id="deli">
+                            <img alt="deli_beer" src={asset_url("/images/delirium.jpg")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Délirium ({beers.duel_1.delirium.percentage})</span>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.left_score} id="delirium">
-                                <img alt="deli_score" src={asset_url("/images/beer_3.jpg")} className={classes.left_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledLeft_score} id="delirium">
+                                <img alt="deli_score" src={asset_url("/images/beer_3.jpg")} component={StyledLeft_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.right_score} id="cuvee">
-                                <img alt="cuvee_score" src={asset_url("/images/beer_3.jpg")} className={classes.right_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledRight_score} id="cuvee">
+                                <img alt="cuvee_score" src={asset_url("/images/beer_3.jpg")} component={StyledRight_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.img_div_right}>
-                            <img alt="cuvee_beer" src={asset_url("/images/cuvee.png")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Cuvée ({beers.duel_1.cuvee.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_right}>
+                            <img alt="cuvee_beer" src={asset_url("/images/cuvee.png")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Cuvée ({beers.duel_1.cuvee.percentage})</span>
                         </Grid>
                     </Grid>
 
 
                     {/* DUEL 2 */}
                     <Grid container direction="row" style={{height: '20%'}}>
-                        <Grid item xs={3} className={classes.img_div_left}>
-                            <img alt="delired_beer" src={asset_url("/images/deli_red.png")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Déli Red ({beers.duel_2.delired.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_left}>
+                            <img alt="delired_beer" src={asset_url("/images/deli_red.png")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Déli Red ({beers.duel_2.delired.percentage})</span>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.left_score} id="delired">
-                                <img alt="delired_score" src={asset_url("/images/beer_3.jpg")} className={classes.left_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledLeft_score} id="delired">
+                                <img alt="delired_score" src={asset_url("/images/beer_3.jpg")} component={StyledLeft_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.right_score} id="pechemel">
-                                <img alt="pechemel_score" src={asset_url("/images/beer_3.jpg")} className={classes.right_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledRight_score} id="pechemel">
+                                <img alt="pechemel_score" src={asset_url("/images/beer_3.jpg")} component={StyledRight_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.img_div_right}>
-                            <img alt="pechemel_beer" src={asset_url("/images/pechemel.jpg")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Pêche Mel ({beers.duel_2.pechemel.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_right}>
+                            <img alt="pechemel_beer" src={asset_url("/images/pechemel.jpg")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Pêche Mel ({beers.duel_2.pechemel.percentage})</span>
                         </Grid>
                     </Grid>
 
 
                     {/* DUEL 3 */}
                     <Grid container direction="row" style={{height: '20%'}}>
-                        <Grid item xs={3} className={classes.img_div_left}>
-                            <img alt="delinoel_beer" src={asset_url("/images/delinoel.jpg")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Déli Noël ({beers.duel_3.delinoel.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_left}>
+                            <img alt="delinoel_beer" src={asset_url("/images/delinoel.jpg")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Déli Noël ({beers.duel_3.delinoel.percentage})</span>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.left_score} id="delinoel">
-                                <img alt="delinoel_score" src={asset_url("/images/beer_3.jpg")} className={classes.left_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledLeft_score} id="delinoel">
+                                <img alt="delinoel_score" src={asset_url("/images/beer_3.jpg")} component={StyledLeft_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.right_score} id="bush">
-                                <img alt="bush_score" src={asset_url("/images/beer_3.jpg")} className={classes.right_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledRight_score} id="bush">
+                                <img alt="bush_score" src={asset_url("/images/beer_3.jpg")} component={StyledRight_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.img_div_right}>
-                            <img alt="bush_beer" src={asset_url("/images/bush.jpg")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Bush Triple ({beers.duel_3.bush.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_right}>
+                            <img alt="bush_beer" src={asset_url("/images/bush.jpg")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Bush Triple ({beers.duel_3.bush.percentage})</span>
                         </Grid>
                     </Grid>
                     
 
                     {/* DUEL 4 */}
                     <Grid container direction="row" style={{height: '20%'}}>
-                        <Grid item xs={3} className={classes.img_div_left}>
-                            <img alt="argentum_beer" src={asset_url("/images/argentum.jpg")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Argentum ({beers.duel_4.argentum.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_left}>
+                            <img alt="argentum_beer" src={asset_url("/images/argentum.jpg")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Argentum ({beers.duel_4.argentum.percentage})</span>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.left_score} id="argentum">
-                                <img alt="argentum_score" src={asset_url("/images/beer_3.jpg")} className={classes.left_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledLeft_score} id="argentum">
+                                <img alt="argentum_score" src={asset_url("/images/beer_3.jpg")} component={StyledLeft_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.div_score}>
-                            <div className={classes.right_score} id="surfine">
-                                <img alt="surfine_score" src={asset_url("/images/beer_3.jpg")} className={classes.right_score_img}/>
+                        <Grid item xs={3} component={StyledDiv_score}>
+                            <div component={StyledRight_score} id="surfine">
+                                <img alt="surfine_score" src={asset_url("/images/beer_3.jpg")} component={StyledRight_score_img}/>
                             </div>
                         </Grid>
-                        <Grid item xs={3} className={classes.img_div_right}>
-                            <img alt="surfine_beer" src={asset_url("/images/surfine.png")} className={classes.beer_img}/>
-                            <span className={classes.beer_name}>Surfine ({beers.duel_4.surfine.percentage})</span>
+                        <Grid item xs={3} component={StyledImg_div_right}>
+                            <img alt="surfine_beer" src={asset_url("/images/surfine.png")} component={StyledBeer_img}/>
+                            <span component={StyledBeer_name}>Surfine ({beers.duel_4.surfine.percentage})</span>
                         </Grid>
                     </Grid>
 
@@ -212,102 +321,5 @@ class TVDuelBrasseur2 extends React.Component {
 	}
 }
 
-const styles = theme => ({
-    body: {
-        fontWeight: 500,
-    },
-    main: {
-        height: '100vh', 
-        backgroundColor: '#000223', 
-        color: 'white', 
-        padding: '2% 1%',
-        fontWeight: 600,
-        backgroundAttachment: 'fixed',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '5% 50%',
-        backgroundSize: '10%',
-    },       
-    pic : {
-        backgroundAttachment: 'fixed',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '95% 50%',
-        backgroundSize: '10%',
-        height: '100%', 
-        border: '1.5px solid #B22132'
-    }, 
-    duel_img : {
-        objectFit: 'contain', 
-        height: '100%',
-        width: '100%',
-    },    
-    img_div_left : {
-        height: '100%', 
-        paddingRight: 0,
-        textAlign: 'right',
-        paddingTop: 15,
-    },
-    img_div_right : {
-        height: '100%', 
-        paddingRight: 0,
-        textAlign: 'left',
-        paddingTop: 15,
-    },
-    beer_img : {
-        objectFit: 'contain', 
-        height: '80%',
-        borderRadius: 5,
-    },    
-    beer_name : {
-        height: '20%',
-        fontSize: 20,
-        display: 'block',
-        marginTop: -5,
-    },
-    left : {
-        textAlign: 'right',
-    },    
-    right : {
-        textAlign: 'left',
-    },
-    div_score : {
-        height: '100%',
-        position: 'relative',
-    },  
-    left_score_img : {
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-    },    
-    right_score_img : {
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-    },    
-    left_score : {
-        right: 10,
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
-        top: '35%',
-        height: '30%',
-        width: '80%',
-        position: 'absolute',
-        backgroundColor: '#B22132',
-    },    
-    right_score : {
-        left: 10,
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10,
-        top: '35%',
-        height: '30%',
-        width: '80%',
-        position: 'absolute',
-        backgroundColor: '#B22132',
-    },    
-});
-
-export default withStyles (styles) (TVDuelBrasseur2)
+export default TVDuelBrasseur2
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core';
 import { ajaxPost } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
 import './Barbar.css';

@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { ajaxPost } from '../../utils/Ajax';
-import { asset_url } from '../../utils/Config';
-import Grid from '@material-ui/core/Grid';
+
 
 function App() {
   const [player1Health, setPlayer1Health] = useState(100);

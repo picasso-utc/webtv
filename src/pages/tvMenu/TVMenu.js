@@ -1,9 +1,46 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import { styled } from '@mui/material';
+import {Grid} from '@mui/material';
+import {TypographyTypography} from '@mui/material';
 import { asset_url } from '../../utils/Config';
 import { ajaxGet } from '../../utils/Ajax';
+
+const StyledTitle = styled('div')({
+  marginTop: 10,
+        width: '100%',
+        textAlign: 'center',
+        fontSize: 80
+});
+
+const StyledContainer = styled('div')({
+  width: '100%',
+        height: '100vh',
+        backgroundColor: '#000223',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '10%',
+        backgroundPosition: '5% 3%',
+        backgroundAttachment: 'fixed',
+        color: 'white',
+        overflowY: 'hidden'
+});
+
+const StyledTable = styled('div')({
+  width: '100%',
+        marginTop: 50,
+        fontSize: 50,
+        borderCollapse: 'collapse'
+});
+
+const StyledTitle_cell = styled('div')({
+  width: '33%',
+        height: 80,
+        borderBottom: '2px solid white'
+});
+
+const StyledRow_cell = styled('div')({
+  textAlign: 'center',
+        height: 65
+});
 
 
 class TVContent extends React.Component {
@@ -32,7 +69,7 @@ class TVContent extends React.Component {
 
 	render() {
 
-        const { classes } = this.props;
+        const {} = this.props;
         const { menu, orders } = this.state;
         const backgroundImage = {
             backgroundImage: 'url(\'' + asset_url('/images/background_logo.png') + '\')'
@@ -40,30 +77,30 @@ class TVContent extends React.Component {
 
 		return (
             
-            <div className={classes.container} style={backgroundImage}>
+            <div component={StyledContainer} style={backgroundImage}>
                 <Grid container direction="row" justify="center" alignItems="center">
-                    <Typography variant="h2" gutterBottom className={classes.title}>
+                    <Typography variant="h2" gutterBottom component={StyledTitle}>
                         Prochains menus à servir
                     </Typography>
-                    <Typography variant="h2" gutterBottom className={classes.title}>
+                    <Typography variant="h2" gutterBottom component={StyledTitle}>
                         {menu}
                     </Typography>
                 </Grid>
                 <Grid container direction="row">
-                    <table className={classes.table}>
+                    <table component={StyledTable}>
                         <thead>
                             <tr>
-                                <th className={classes.title_cell}>Nom</th>
-                                <th className={classes.title_cell}>Prénom</th>
-                                <th className={classes.title_cell}>Quantité</th>
+                                <th component={StyledTitle_cell}>Nom</th>
+                                <th component={StyledTitle_cell}>Prénom</th>
+                                <th component={StyledTitle_cell}>Quantité</th>
                             </tr>
                         </thead>
                         <tbody>
                             {orders.map((order, index) => (
                                 <tr key={index}>
-                                    <td className={classes.row_cell}>{order.last_name}</td>
-                                    <td className={classes.row_cell}>{order.first_name}</td>
-                                    <td className={classes.row_cell}>{order.quantity}</td>
+                                    <td component={StyledRow_cell}>{order.last_name}</td>
+                                    <td component={StyledRow_cell}>{order.first_name}</td>
+                                    <td component={StyledRow_cell}>{order.quantity}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -74,40 +111,5 @@ class TVContent extends React.Component {
 	}
 }
 
-const styles = theme => ({
-    title : {
-        marginTop: 10,
-        width: '100%',
-        textAlign: 'center',
-        fontSize: 80,
-    },
-    container: {
-        width: '100%',
-        height: '100vh',
-        backgroundColor: '#000223',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: '10%',
-        backgroundPosition: '5% 3%',
-        backgroundAttachment: 'fixed',
-        color: 'white',
-        overflowY: 'hidden',
-    },
-    table : {
-        width: '100%',
-        marginTop: 50,
-        fontSize: 50,
-        borderCollapse: 'collapse'
-    },
-    title_cell : {
-        width: '33%',
-        height: 80,
-        borderBottom: '2px solid white',
-    },
-    row_cell : {
-        textAlign: 'center',
-        height: 65,
-    }
-});
-
-export default withStyles (styles) (TVContent)
+export default TVContent
 

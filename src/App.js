@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline } from "@mui/material";
 
 import "./App.css";
 
@@ -33,6 +33,7 @@ import duelGKA24 from "./pages/duelGKA24/duelGKA24";
 import beerMenu from "./pages/BeerMenu/BeerMenu";
 import Aviator from "./pages/RDPA24/aviator";
 import NewYearA24 from "./pages/newYearA24/newYear";
+import WallPic from "./pages/RDPP25/wallpic";
 
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -72,6 +73,7 @@ class App extends React.Component {
             <Route path="/beerMenu" exact component={beerMenu} />
             <Route path="/rdpA24" exact component={Aviator} />
             <Route path="/newYear" exact component={NewYearA24} />
+            <Route path="/WallPic" exact component={WallPic} />
           </Switch>
         </BrowserRouter>
     );

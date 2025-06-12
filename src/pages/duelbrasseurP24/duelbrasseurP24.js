@@ -1,11 +1,90 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { Box } from '@mui/material';
+import { styled } from '@mui/material';
 import { ajaxPost } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
-import Grid from '@material-ui/core/Grid';
-import { Typography, Box } from '@material-ui/core';
 
 import './duelbrasseurP24.css';
+
+const StyledRoot = styled('div')({
+  height: '100vh',
+        width: '100vw',
+        backgroundColor: 'black',
+        backgroundPosition: 'center',
+        backgroundSize: 'contain',
+        backgroundOpacity: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative'
+});
+
+const StyledAnimationUrl = styled('div')({
+  size : '100%',
+        width : '500px'
+});
+
+const StyledOverlay = styled('div')({
+  position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(73,20,62,0.5)',
+        zIndex: 1
+});
+
+const StyledVideo = styled('div')({
+  position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '90%',
+        height: '90%',
+        objectFit: 'cover'
+});
+
+const StyledText = styled('div')({
+  color: '#fff',
+        zIndex: 2
+});
+
+const StyledRectangleLeft = styled('div')({
+  position: 'absolute',
+        left: '0px',
+        top: '200px',
+        height: '38px',
+        background: '#ff80b5',
+        border : 'solid white'
+});
+
+const StyledRectangleLeftBorder = styled('div')({
+  position: 'absolute',
+        left: '0px',
+        top: '200px',
+        height: '38px',
+        background: 'rgba(255,1,107,0)',
+        border : 'solid white',
+        index : '1'
+});
+
+const StyledRectangleRight = styled('div')({
+  position: 'absolute',
+        right: '0px',
+        top: '200px',
+        height: '38px',
+        background: '#969696',
+        border : 'solid white'
+});
+
+const StyledRectangleRightBorder = styled('div')({
+  position: 'absolute',
+        right: '0px',
+        top: '200px',
+        height: '38px',
+        background: 'rgba(255,1,107,0)',
+        border : 'solid white',
+        index : '1'
+});
 
 class DuelKasteel extends React.Component{
     constructor(props) {
@@ -138,15 +217,15 @@ class DuelKasteel extends React.Component{
     }
 
     render() {
-        const { classes } = this.props;
+        const {} = this.props;
         const { drinks, attackQueue } = this.state;
         const listItems = attackQueue.map((d) => <li>{d.team}</li>);
         const animationUrl = this.state.animationUrl
 
         return (
-            <Box className={classes.root}>
+            <Box component={StyledRoot}>
                 <div className="HUD">
-                    <img src={asset_url("/images/duelbrasseurP24/HUD.png")} class="hud"></img>
+                    <img src={asset_url("/images/duelbrasseurP24/HUD.png")} className="hud"></img>
                     <div className="left">
                         <p className="scoreText">{drinks.filter(e => e.team === 'left').map(e => e.total).reduce((a, b) => a + b)}x</p>
                     </div>
@@ -169,79 +248,4 @@ class DuelKasteel extends React.Component{
 
 }
 
-const styles = theme => ({
-    root: {
-        height: '100vh',
-        width: '100vw',
-        backgroundColor: 'black',
-        backgroundPosition: 'center',
-        backgroundSize: 'contain',
-        backgroundOpacity: '50%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-    },
-    animationUrl: {
-        size : '100%',
-        width : '500px',
-    },
-    overlay: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(73,20,62,0.5)',
-        zIndex: 1,
-    },
-    video: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '90%',
-        height: '90%',
-        objectFit: 'cover',
-    },
-    text: {
-        color: '#fff',
-        zIndex: 2,
-    },
-    rectangleLeft :{
-        position: 'absolute',
-        left: '0px',
-        top: '200px',
-        height: '38px',
-        background: '#ff80b5',
-        border : 'solid white',
-    },
-    rectangleLeftBorder : {
-        position: 'absolute',
-        left: '0px',
-        top: '200px',
-        height: '38px',
-        background: 'rgba(255,1,107,0)',
-        border : 'solid white',
-        index : '1'
-    },
-    rectangleRight :{
-        position: 'absolute',
-        right: '0px',
-        top: '200px',
-        height: '38px',
-        background: '#969696',
-        border : 'solid white',
-    },
-    rectangleRightBorder : {
-        position: 'absolute',
-        right: '0px',
-        top: '200px',
-        height: '38px',
-        background: 'rgba(255,1,107,0)',
-        border : 'solid white',
-        index : '1'
-    },
-});
-
-
-export default withStyles(styles) (DuelKasteel)
+export default DuelKasteel

@@ -1,7 +1,19 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/material';
 import { ajaxGet } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
+
+const StyledRoot = styled('div')({
+  width: '100%',
+        height: '100vh',
+        overflowY: 'hidden'
+});
+
+const StyledIframe_style = styled('div')({
+  width: '100%',
+        height: '100%',
+        border: 'None'
+});
 
 
 class TV extends React.Component {
@@ -51,32 +63,19 @@ class TV extends React.Component {
 
 	render() {
 
-        const { classes } = this.props;
+        const {} = this.props;
         const { tv } = this.state;
 
 		return (
             
-            <div className={classes.root}>
+            <div component={StyledRoot}>
                 {tv.id &&
-                    <iframe title="main" src={tv.link.url} className={classes.iframe_style}></iframe>
+                    <iframe title="main" src={tv.link.url} component={StyledIframe_style}></iframe>
                 }
             </div>         
 		);
 	}
 }
 
-const styles = theme => ({
-    root : {
-        width: '100%',
-        height: '100vh',
-        overflowY: 'hidden',
-    },
-    iframe_style: {
-        width: '100%',
-        height: '100%',
-        border: 'None',
-    }
-});
-
-export default withStyles (styles) (TV)
+export default TV
 

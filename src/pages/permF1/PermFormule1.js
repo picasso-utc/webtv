@@ -1,8 +1,87 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import {Grid } from '@mui/material';
+import { styled } from '@mui/material';
 import { ajaxPost } from '../../utils/Ajax';
 import { asset_url } from '../../utils/Config';
-import Grid from '@material-ui/core/Grid';
+
+const StyledMain = styled('div')({
+  backgroundColor: "#000000",
+        height: '100vh'
+});
+
+const StyledTitleBig = styled('div')({
+  fontSize: '30px',
+        color:'#FFFFFF',
+        marginTop: '0px'
+});
+
+const StyledTitleMedium = styled('div')({
+  fontSize: '30px',
+        color:'#FFFFFF',
+        marginTop: '0px'
+});
+
+const StyledTitle = styled('div')({
+  fontSize: '25px',
+        color:'#FFFFFF',
+        marginTop: '0px'
+});
+
+const StyledNameEcurie = styled('div')({
+  fontSize: '24px',
+        color : 'white',
+        margin: '0px'
+});
+
+const StyledContainerLeader = styled('div')({
+  marginRight:'35px'
+});
+
+const StyledEcurieContainer = styled('div')({
+  marginBottom:'10px'
+});
+
+const StyledMainContainer = styled('div')({
+  borderTopWidth:'2px',
+        borderTopStyle:'solid',
+        borderTopColor: '#FFFFFF',
+        borderLeftWidth:'2px',
+        borderLeftStyle:'solid',
+        borderLeftColor: '#FFFFFF',
+        borderTopLeftRadius:'25px',
+        padding:'25px',
+        borderBottomRightRadius:'25px',
+        backgroundColor: "rgba(0, 0, 0, 0.9)",
+        width:'60%',
+        margin:'auto'
+});
+
+const StyledRank = styled('div')({
+  fontSize: '24px',
+        margin:'0px',
+        color : 'black',
+        backgroundColor: 'white',
+        width: '20px',
+        height : '28px',
+        textAlign : 'center'
+});
+
+const StyledContainerTeam = styled('div')({
+  borderTopWidth:'2px',
+        borderTopStyle:'solid',
+        borderTopColor: '#FF0000',
+        verticalAlign:"middle"
+});
+
+const StyledLeaderLogo = styled('div')({
+  width:'300px',
+        height:'295px',
+        fit : 'contain'
+});
+
+const StyledEcurieNameContainer = styled('div')({
+  width:'70%'
+});
 
 
 class PermFormule1 extends React.Component {
@@ -139,7 +218,7 @@ class PermFormule1 extends React.Component {
 
 
     render() {
-        const { classes } = this.props;
+        const {} = this.props;
         const { beers } = this.state;
 
         const keysBeer = Object.keys(beers).sort(function(a,b){
@@ -167,21 +246,21 @@ class PermFormule1 extends React.Component {
         }
 
         return (
-            // <Grid container alignItems="center" justifyContent="center" className={classes.main} style={backgroundImage}>
-            <Grid container alignItems="center" justifyContent="center" className={classes.main} style={backgroundImage}>
+            // <Grid container alignItems="center" justifyContent="center" component={StyledMain} style={backgroundImage}>
+            <Grid container alignItems="center" justifyContent="center" component={StyledMain} style={backgroundImage}>
                 {
-                    <Grid container alignItems="center" justifyContent="center"  className={classes.mainContainer}>
+                    <Grid container alignItems="center" justifyContent="center"  component={StyledMainContainer}>
                         <Grid item container direction={"column"}>
-                            <h1 className={classes.titleBig}>FORMULA 1</h1>
-                            <h2 className={classes.titleMedium}>PIC GRAND PRIX</h2>
+                            <h1 component={StyledTitleBig}>FORMULA 1</h1>
+                            <h2 component={StyledTitleMedium}>PIC GRAND PRIX</h2>
                         </Grid>
-                        <Grid item container direction={"row"} className={classes.containerTeam}>
-                            <Grid item direction={"column"} className={classes.containerLeader}>
-                                <h1 className={classes.title}>LEADERS</h1>
-                                <img item src={asset_url(test[0].img)} className={classes.leaderLogo}/>
+                        <Grid item container direction={"row"} component={StyledContainerTeam}>
+                            <Grid item direction={"column"} component={StyledContainerLeader}>
+                                <h1 component={StyledTitle}>LEADERS</h1>
+                                <img item src={asset_url(test[0].img)} component={StyledLeaderLogo}/>
                             </Grid>
                             <Grid  item  direction={"column"}>
-                                <h1 className={classes.title}>CONSTRUCTOR CHAMPIONSHIP</h1>
+                                <h1 component={StyledTitle}>CONSTRUCTOR CHAMPIONSHIP</h1>
                                 {
                                     test.map(((value,index) => {
                                         const style = {
@@ -190,13 +269,13 @@ class PermFormule1 extends React.Component {
                                             backgroundColor : value.color
                                         }
                                         return(
-                                            <Grid className={classes.ecurieContainer} direction={"row"} container justify={"space-between"}>
-                                                <p item className={classes.rank}> {index+1}</p>
+                                            <Grid component={StyledEcurieContainer} direction={"row"} container justify={"space-between"}>
+                                                <p item component={StyledRank}> {index+1}</p>
                                                 <div item style={style}></div>
-                                                <Grid item justify={"flex-start"} className={classes.ecurieNameContainer}>
-                                                    <p item className={classes.nameEcurie}>{value.name}</p>
+                                                <Grid item justify={"flex-start"} component={StyledEcurieNameContainer}>
+                                                    <p item component={StyledNameEcurie}>{value.name}</p>
                                                 </Grid>
-                                                <p item className={classes.nameEcurie}>{value.nb} pts</p>
+                                                <p item component={StyledNameEcurie}>{value.nb} pts</p>
                                             </Grid>
                                             )
                                     }))
@@ -211,76 +290,5 @@ class PermFormule1 extends React.Component {
     }
 }
 
-const styles = theme => ({
-    main: {
-        backgroundColor: "#000000",
-        height: '100vh',
-    },
-    titleBig:{
-        fontSize: '30px',
-        color:'#FFFFFF',
-        marginTop: '0px',
-    },
-    titleMedium:{
-        fontSize: '30px',
-        color:'#FFFFFF',
-        marginTop: '0px',
-    },
-    title : {
-        fontSize: '25px',
-        color:'#FFFFFF',
-        marginTop: '0px',
-    },
-    nameEcurie : {
-        fontSize: '24px',
-        color : 'white',
-        margin: '0px',
-    },
-    containerLeader:{
-        marginRight:'35px'
-    },
-    ecurieContainer:{
-        marginBottom:'10px',
-    },
-    mainContainer:{
-        borderTopWidth:'2px',
-        borderTopStyle:'solid',
-        borderTopColor: '#FFFFFF',
-        borderLeftWidth:'2px',
-        borderLeftStyle:'solid',
-        borderLeftColor: '#FFFFFF',
-        borderTopLeftRadius:'25px',
-        padding:'25px',
-        borderBottomRightRadius:'25px',
-        backgroundColor: "rgba(0, 0, 0, 0.9)",
-        width:'60%',
-        margin:'auto',
-    },
-    rank:{
-        fontSize: '24px',
-        margin:'0px',
-        color : 'black',
-        backgroundColor: 'white',
-        width: '20px',
-        height : '28px',
-        textAlign : 'center'
-    },
-    containerTeam:{
-        borderTopWidth:'2px',
-        borderTopStyle:'solid',
-        borderTopColor: '#FF0000',
-        verticalAlign:"middle",
-    },
-    leaderLogo:{
-        width:'300px',
-        height:'295px',
-        fit : 'contain',
-    },
-    ecurieNameContainer:{
-        width:'70%',
-    }
-
-});
-
-export default withStyles (styles) (PermFormule1)
+export default PermFormule1
 
