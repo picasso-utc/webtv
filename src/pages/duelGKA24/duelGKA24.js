@@ -14,7 +14,8 @@ class duelGKA24 extends React.Component {
 
         this.state = {
             drinks : [
-                { title : 'Cuvée des Trolls PC', total: 0 },
+                //{ title : 'Cuvée des Trolls PC', total: 0 },
+                { title : "Bois de l'eauuuuu", total : 0 },
                 { title : 'Kasteel Rubus PC', total: 0 },
                 { title : 'Angelus triple', total: 0 },
                 { title : 'Lupulus Triple PC', total: 0 },
@@ -66,7 +67,8 @@ class duelGKA24 extends React.Component {
             return drink ? drink.total : 0;
         };
 
-        const cuvee = getTotal('Cuvée des Trolls PC');
+        //const cuvee = getTotal('Cuvée des Trolls PC');
+        const cuvee = getTotal("Bois de l'eauuuuu");
         const rasta = getTotal('Rasta troll');
         const lupulus = getTotal('Lupulus Triple PC');
         const valdieu = getTotal('Val Dieu Triple PC');
@@ -97,7 +99,7 @@ class duelGKA24 extends React.Component {
                 </div>
                 <div className='valdieu'>
                     <div className='jauge' style={{width: (valdieu * MAX_JAUGE_PX / max_biere)}}>
-                        <p className='Nb_Droit'>{valdieu}</p>
+                        <p className='Nb_Droit'>6</p>
                     </div>
                 </div>
                 <div className='stfeuillien'>
